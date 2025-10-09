@@ -8,16 +8,16 @@ import MobileMenu from "./mobilemenu";
 export default function Header() {
      const [isOpen, setIsOpen] = useState(false);
   return (
-    <header>
-      <nav className="bg-white shadow-md top-0 z-50">
+    <header className="top-0 z-50">
+      <nav className="bg-white">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex gap-3 items-center">
             <Image
               className="dark:invert"
               src="/logga.png"
               alt="logga"
-              width={200}
-              height={100}
+              width={100}
+              height={500}
             />
             <p className="font-nunito-sans text-xl font-bold text-purple-800">
               Boka Danskurser
