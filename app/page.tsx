@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import Hero from "@/components/hero";
 import { getSchools } from "@/lib/dbactions";
 
 export default async function Home() {
@@ -14,6 +15,7 @@ export default async function Home() {
   return (
     <main>
      <Header />
+     <Hero />
       <h1>Boka dans User</h1>
       <section className="grid gap-2">
         {schools.map((school) => (
