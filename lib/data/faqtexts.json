@@ -1,0 +1,28 @@
+{
+    "faqtexts": [
+        {
+             "question": "Vad ska mitt barn ha på sig på danslektionen?",
+             "answer": "Eleven behöver ha på sig mjuka träningskläder som går bra att röra sig i samt uppsatt hår. Ta med gympaskor/inneskor. Vi kommer även dansa utan skor i vissa dansstilar."
+        },
+        {
+            "question": "Har ni prova på-klasser?",
+            "answer": "Ja! Första gången på terminen är en prova-på-lektion."
+        },
+        {
+            "question": "Är det gratis att avboka sig från kursen när som helst?",
+            "answer": "Inbetalning av terminsavgiften betalas innan kursstart. I annat fall riskerar man att förlora sin kursplats. Efter första kurstillfället upptar man en plats på kursen och kan därför inte få tillbaka kursavgiften."
+        },
+        {
+            "question": "Får föräldrar vara med i danssalen?",
+            "answer": "Vanligtvis är det bästa att alla föräldrar väntar utanför, t.ex i caféet. Om ditt barn är orolig för en ny situation vid terminsstart kan ni be Malin om att en förälder kan vara med inne i salen i starten av terminen."
+        },
+        {
+            "question": "Hur många tillfällen är en termin?",
+            "answer": "10 ggr (beroende på termin, ibland fler)."
+        },
+        {
+            "question": "Får jag se vad mitt barn lärt sig?",
+            "answer": "Varje termin avslutas med uppvisning för föräldrar, och på vårterminen avslutar vi med en föreställning där du som elev får prova på att stå på scenen och uppträda inför publik."
+        }
+    ]
+}

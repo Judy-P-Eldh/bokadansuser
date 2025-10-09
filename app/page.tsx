@@ -1,6 +1,7 @@
 import About from "@/components/about";
 import Classes from "@/components/classes";
 import Contact from "@/components/contact";
+import FaqSection from "@/components/faqsection";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import RegisterSection from "@/components/registersection";
@@ -24,6 +25,7 @@ export default async function Home() {
       <Classes />
       <RegisterSection />
       <Contact />
+      <FaqSection />
 
       {/* <h1>Boka dans User</h1>
       <section className="grid gap-2">
