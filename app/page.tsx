@@ -3,11 +3,12 @@ import Classes from "@/components/classes";
 import Contact from "@/components/contact";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
+import RegisterSection from "@/components/registersection";
 import { getSchools } from "@/lib/dbactions";
 
 export default async function Home() {
   const { data: schools, error } = await getSchools();
-// count, 
+  // count,
   if (error) {
     return <div>Fel vid hämtning: {error.message}</div>;
   }
@@ -17,11 +18,13 @@ export default async function Home() {
   }
   return (
     <main>
-     <Header />
-     <Hero />
-     <About />
-     <Classes />
-     <Contact />
+      <Header />
+      <Hero />
+      <About />
+      <Classes />
+      <RegisterSection />
+      <Contact />
+
       {/* <h1>Boka dans User</h1>
       <section className="grid gap-2">
         {schools.map((school) => (
