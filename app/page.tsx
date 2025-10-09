@@ -1,8 +1,9 @@
+import Header from "@/components/header";
 import { getSchools } from "@/lib/dbactions";
 
 export default async function Home() {
-  const { data: schools, count, error } = await getSchools();
-
+  const { data: schools, error } = await getSchools();
+// count, 
   if (error) {
     return <div>Fel vid hämtning: {error.message}</div>;
   }
@@ -12,6 +13,7 @@ export default async function Home() {
   }
   return (
     <main>
+     <Header />
       <h1>Boka dans User</h1>
       <section className="grid gap-2">
         {schools.map((school) => (
