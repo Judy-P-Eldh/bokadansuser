@@ -1,6 +1,7 @@
 "use client"
 
-import * as React from "react"
+import * as React from "react";
+import Form from "next/form";
 import Filter from "@/components/filter"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -22,6 +23,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
+import { filtering } from "@/lib/serveractions";
 
 export function DrawerFilter() {
   const [open, setOpen] = React.useState(false)
@@ -31,14 +33,13 @@ export function DrawerFilter() {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="outline">Filter</Button>
+          <Button className="border-purple-800 w-full justify-self-center hover:bg-purple-600" variant="outline">Filter</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>Filtrera</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              Vad är du intresserad av?
             </DialogDescription>
           </DialogHeader>
           <ProfileForm />
@@ -72,17 +73,9 @@ export function DrawerFilter() {
 
 function ProfileForm({ className }: React.ComponentProps<"form">) {
   return (
-    <form className={cn("grid items-start gap-6", className)}>
+    <Form className={cn("grid items-start gap-6", className)} action={filtering}>
       <Filter />
-      {/* <div className="grid gap-3">
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" defaultValue="shadcn@example.com" />
-      </div>
-      <div className="grid gap-3">
-        <label htmlFor="username">Username</label>
-        <input id="username" defaultValue="@shadcn" />
-      </div> */}
-      <Button type="submit">Save changes</Button>
-    </form>
+      <Button className="bg-purple-800" type="submit">Filtrera</Button>
+    </Form>
   )
 }
