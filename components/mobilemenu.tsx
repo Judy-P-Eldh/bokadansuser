@@ -18,7 +18,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
             <div className="px-4 py-2 flex flex-col space-y-3">
                 <Link href="/" className="text-purple-600 font-medium py-2 border-b border-gray-100">Hem</Link>
                 <Link href="/#schedule" className="text-gray-700 py-2 border-b border-gray-100">Schema</Link>
-                <Link href="/dansstilar" className="text-gray-700 py-2 border-b border-gray-100">Dansstilar</Link>
+                <Link href="/kurser" className="text-gray-700 py-2 border-b border-gray-100">Kurser</Link>
                 <Link href="/#register" className="text-gray-700 py-2 border-b border-gray-100">Anmälan</Link>
                 <Link href="/#contact" className="text-gray-700 py-2">Kontakt</Link>
                 <div className="py-4">
