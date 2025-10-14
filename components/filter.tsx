@@ -1,68 +1,181 @@
 "use client";
-import { useState } from 'react';
+
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useTransition } from "react";
 
 export default function Filter() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [isPending, startTransition] = useTransition();
+
+  // Initiera state från URL params
+  const [selectedDays, setSelectedDays] = useState<string[]>(
+    searchParams.getAll("days")
+  );
+  const [selectedDates, setSelectedDates] = useState<string[]>(
+    searchParams.getAll("dates")
+  );
+  const [selectedAge, setSelectedAge] = useState<string[]>(
+    searchParams.getAll("age")
+  );
+  const [selectedStyles, setSelectedStyles] = useState<string[]>(
+    searchParams.getAll("styles")
+  );
+  const [selectedTypes, setSelectedTypes] = useState<string[]>(
+    searchParams.getAll("types")
+  );
+
+  const toggleValue = (
+    value: string,
+    array: string[],
+    setFunction: (vals: string[]) => void
+  ) => {
+    if (array.includes(value)) {
+      setFunction(array.filter((item) => item !== value));
+    } else {
+      setFunction([...array, value]);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const params = new URLSearchParams();
+
+    // Kapitalisera dagarna för att matcha databasen (Monday, Tuesday, etc.)
+    selectedDays.forEach((day) => {
+      const capitalized = day.charAt(0).toUpperCase() + day.slice(1);
+      params.append("days", capitalized);
+    });
+    selectedDates.forEach((date) => params.append("dates", date));
+    selectedAge.forEach((age) => params.append("age", age));
+    selectedStyles.forEach((style) => params.append("styles", style));
+    selectedTypes.forEach((type) => params.append("types", type));
+
+    startTransition(() => {
+      router.push(`/kurser?${params.toString()}`);
+    });
+  };
+
+  const handleReset = () => {
+    setSelectedDays([]);
+    setSelectedDates([]);
+    setSelectedAge([]);
+    setSelectedStyles([]);
+    setSelectedTypes([]);
+    startTransition(() => {
+      router.push("/kurser");
+    });
+  };
+
   return (
-    <section className="grid lg:grid-cols-3 grid-cols-2 mx-auto gap-2 p-4 lg:w-full w-sm h-150 border-purple-600 rounded-lg text-sm">
-      <fieldset className=''>
-        <legend className="font-semibold mb-1">Dag</legend>
-        <label htmlFor='monday' className="flex items-center gap-2 mb-1"><input id='monday' type="checkbox" />Måndag</label>
-        <label htmlFor='tuesday' className='flex items-center gap-2 mb-1'> <input id='tuesday' type="checkbox" />Tisdag</label>
-        <label htmlFor='wednesday' className='flex items-center gap-2 mb-1'><input id='wednesday' type="checkbox" />Onsadag</label>
-        <label htmlFor='thursday' className='flex items-center gap-2 mb-1'><input id='thursday' type="checkbox" />Torsdag</label>
-        <label htmlFor='friday' className='flex items-center gap-2 mb-1'><input id='friday' type="checkbox" />Fredag</label>
-        <label htmlFor='saturday' className='flex items-center gap-2 mb-1'><input id='saturday' type="checkbox" />Lörag</label>
-        <label htmlFor='sunday' className='flex items-center gap-2 mb-1'><input id='sunday' type="checkbox" />Söndag</label>
-      </fieldset>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <section className="grid lg:grid-cols-3 grid-cols-2 mx-auto gap-2 p-4 lg:w-full w-sm h-150 border-purple-600 rounded-lg text-sm">
+        <fieldset>
+          <legend className="font-semibold mb-1">Dag</legend>
+          {["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"].map(
+            (day) => (
+              <label key={day} className="flex items-center gap-2 mb-1">
+                <input
+                  type="checkbox"
+                  value={day}
+                  checked={selectedDays.includes(day)}
+                  onChange={() => toggleValue(day, selectedDays, setSelectedDays)}
+                />
+                {day.charAt(0).toUpperCase() + day.slice(1)}
+              </label>
+            )
+          )}
+        </fieldset>
 
-      <fieldset className=''>
-        <legend className="font-semibold mb-1">Startdatum</legend>
-        <label className="flex items-center gap-2 mb-1"><input id='2aug' type="checkbox" />2 augusti</label>
-        <label className="flex items-center gap-2 mb-1"><input id='4okt' type="checkbox" />4 oktober</label>
-        <label className="flex items-center gap-2 mb-1"><input id='25okt' type="checkbox" />25 oktober</label>
-        <label className="flex items-center gap-2 mb-1"><input id='18jan' type="checkbox" />18 januari</label>
-      </fieldset>
+        {/* <fieldset>
+          <legend className="font-semibold mb-1">Startdatum</legend>
+          {[
+            { label: "20 aug", value: "2025-08-20" },
+            { label: "25 aug", value: "2025-08-25" },
+            { label: "25 okt", value: "2025-10-25" },
+            { label: "18 jan", value: "2026-01-18" },
+          ].map((dateObj) => (
+            <label key={dateObj.value} className="flex items-center gap-2 mb-1">
+              <input
+                type="checkbox"
+                value={dateObj.value}
+                checked={selectedDates.includes(dateObj.value)}
+                onChange={() =>
+                  toggleValue(dateObj.value, selectedDates, setSelectedDates)
+                }
+              />
+              {dateObj.label}
+            </label>
+          ))}
+        </fieldset> */}
 
-      <fieldset className=''>
-        <legend className="font-semibold mb-1">Skola</legend>
-        <label className="flex items-center gap-2 mb-1"><input id='Nillas dansskola' type="checkbox" />Nillas dansskola</label>
-        <label className="flex items-center gap-2 mb-1"><input id='Malins danskurser' type="checkbox" />Malins danskurser</label>
-        <label className="flex items-center gap-2 mb-1"><input id='Olas dans' type="checkbox" />Olas dans</label>
-      </fieldset>
 
-      <fieldset className=''>
-        <legend className="font-semibold mb-1">Ålder</legend>
-        <label className="flex items-center gap-2 mb-1"><input id='5-6' type="checkbox" />5-6 år</label>
-        <label className="flex items-center gap-2 mb-1"><input id='7-9' type="checkbox" />7-9 år</label>
-        <label className="flex items-center gap-2 mb-1"><input id='10-13' type="checkbox" />10-13 år</label>
-        <label className="flex items-center gap-2 mb-1"><input id='14-18' type="checkbox" />14-18 år</label>
-        <label className="flex items-center gap-2 mb-1"><input id='18+' type="checkbox" />18+ år</label>
-      </fieldset>
+        <fieldset>
+          <legend className="font-semibold mb-1">Ålder</legend>
+          {["5-6", "7-9", "10-13", "14-18", "18+"].map(
+            (ageValue) => (
+              <label key={ageValue} className="flex items-center gap-2 mb-1">
+                <input
+                  type="checkbox"
+                  value={ageValue}
+                  checked={selectedAge.includes(ageValue)}
+                  onChange={() => toggleValue(ageValue, selectedAge, setSelectedAge)}
+                />
+                {ageValue.replace("value_", "").replace("_", "-")} år
+              </label>
+            )
+          )}
+        </fieldset>
 
-      <fieldset className=''>
-        <legend className="font-semibold mb-1">Dansstil</legend>
-        <label className="flex items-center gap-2 mb-1"><input id='Barndans' type="checkbox" />Barndans</label>
-        <label className="flex items-center gap-2 mb-1"><input id='Dansmix' type="checkbox" />Dansmix</label>
-        <label className="flex items-center gap-2 mb-1"><input id='Jazzdans' type="checkbox" />Jazzdans</label>
-        <label className="flex items-center gap-2 mb-1"><input id='Hip Hop' type="checkbox" />Hip Hop</label>
-        <label className="flex items-center gap-2 mb-1"><input id='Breaking' type="checkbox" />Breaking</label>
-        <label className="flex items-center gap-2 mb-1"><input id='Locking' type="checkbox" />Locking</label>
-      </fieldset>
+        <fieldset>
+          <legend className="font-semibold mb-1">Dansstil</legend>
+          {["barndans", "dansmix", "jazzdans", "hiphop", "breaking", "locking"].map(
+            (style) => (
+              <label key={style} className="flex items-center gap-2 mb-1">
+                <input
+                  type="checkbox"
+                  value={style}
+                  checked={selectedStyles.includes(style)}
+                  onChange={() => toggleValue(style, selectedStyles, setSelectedStyles)}
+                />
+                {style}
+              </label>
+            )
+          )}
+        </fieldset>
 
-      <fieldset className=''>
-        <legend className="font-semibold mb-1">Typ</legend>
-        <label className="flex items-center gap-2 mb-1"><input id='Workshop' type="checkbox" />Workshop</label>
-      </fieldset>
+        <fieldset>
+          <legend className="font-semibold mb-1">Typ</legend>
+          <label className="flex items-center gap-2 mb-1">
+            <input
+              type="checkbox"
+              value="workshop"
+              checked={selectedTypes.includes("workshop")}
+              onChange={() =>
+                toggleValue("workshop", selectedTypes, setSelectedTypes)
+              }
+            />
+            Workshop
+          </label>
+        </fieldset>
+      </section>
 
-      <fieldset className=''>
-        <legend className="font-semibold mb-1">Antal gånger</legend>
-        <label htmlFor='antal' className="sr-only flex items-center gap-2 mb-1">Antal gånger</label>
-        <input id='antal' type="range" min={2} max={20} />
-        <div className="flex justify-between text-xs">
-          <span>0</span>
-          <span>20</span>
-        </div>
-      </fieldset>
-    </section>
+      <button
+        type="submit"
+        disabled={isPending}
+        className="w-full bg-purple-800 text-white py-2 rounded hover:bg-purple-700 disabled:opacity-50"
+      >
+        {isPending ? "Filtrerar..." : "Filtrera"}
+      </button>
+
+      <button
+        type="button"
+        onClick={handleReset}
+        disabled={isPending}
+        className="w-full bg-gray-500 text-white py-2 rounded hover:bg-gray-600 disabled:opacity-50"
+      >
+        Rensa filter
+      </button>
+    </form>
   );
 }
