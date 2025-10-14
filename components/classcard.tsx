@@ -16,7 +16,7 @@ export default function ClassCard({
   end_time,
   start_date,
   end_date,
-  nr_times,
+  // nr_times,
   school_id,
 }: {
   name: string;
@@ -33,7 +33,7 @@ export default function ClassCard({
   end_time: string;
   start_date: string;
   end_date: string;
-  nr_times: number;
+  // nr_times: number;
   school_id: number;
 }) {
   return (
@@ -55,7 +55,8 @@ export default function ClassCard({
         <p className="text-purple-600 font-medium">{level}</p>
         <p className="text-gray-700 mb-4">{description}</p>
         <p className="text-gray-700 mb-4">
-          {start_date} till {end_date} : {nr_times} ggr.
+          {start_date} till {end_date} 
+          {/* : {nr_times} ggr. */}
         </p>
         <p className="text-gray-700 mb-4">
           {price} kr.
