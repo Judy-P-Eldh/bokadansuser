@@ -2,8 +2,10 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
+import { FilterOptions } from "@/lib/data/interfaces";
+import { FilterProps } from "@/lib/data/interfaces";
 
-export default function Filter() {
+export default function Filter({ filterOptions }: FilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
@@ -47,9 +49,8 @@ export default function Filter() {
       params.append("days", capitalized);
     });
 
-
     selectedDates.forEach((date) => params.append("dates", date));
-    selectedAge.forEach((age) => params.append("age", age));
+    selectedAge.forEach((age) => params.append("ages", age));
     selectedStyles.forEach((style) => params.append("styles", style));
     selectedTypes.forEach((type) => params.append("types", type));
 
@@ -89,24 +90,17 @@ export default function Filter() {
           )}
         </fieldset>
 
-        <fieldset>
+          <fieldset>
           <legend className="font-semibold mb-1">Startdatum</legend>
-          {[
-            { label: "20 aug", value: "2025-08-20" },
-            { label: "25 aug", value: "2025-08-25" },
-            { label: "25 okt", value: "2025-10-25" },
-            { label: "18 jan", value: "2026-01-18" },
-          ].map((dateObj) => (
-            <label key={dateObj.value} className="flex items-center gap-2 mb-1">
+          {filterOptions.dates.map((date) => (
+            <label key={date.value} className="flex items-center gap-2 mb-1">
               <input
                 type="checkbox"
-                value={dateObj.value}
-                checked={selectedDates.includes(dateObj.value)}
-                onChange={() =>
-                  toggleValue(dateObj.value, selectedDates, setSelectedDates)
-                }
+                value={date.value}
+                checked={selectedDates.includes(date.value)}
+                onChange={() => toggleValue(date.value, selectedDates, setSelectedDates)}
               />
-              {dateObj.label}
+              {date.label}
             </label>
           ))}
         </fieldset>
@@ -114,51 +108,47 @@ export default function Filter() {
 
         <fieldset>
           <legend className="font-semibold mb-1">Ålder</legend>
-          {["5-6", "7-9", "10-13", "14-18", "18+"].map(
-            (ageValue) => (
-              <label key={ageValue} className="flex items-center gap-2 mb-1">
-                <input
-                  type="checkbox"
-                  value={ageValue}
-                  checked={selectedAge.includes(ageValue)}
-                  onChange={() => toggleValue(ageValue, selectedAge, setSelectedAge)}
-                />
-                {ageValue.replace("value_", "").replace("_", "-")} år
-              </label>
-            )
-          )}
+          {filterOptions.ages.map((age) => (
+            <label key={age.value} className="flex items-center gap-2 mb-1">
+              <input
+                type="checkbox"
+                value={age.value}
+                checked={selectedAge.includes(age.value)}
+                onChange={() => toggleValue(age.value, selectedAge, setSelectedAge)}
+              />
+              {age.label}
+            </label>
+          ))}
         </fieldset>
 
         <fieldset>
           <legend className="font-semibold mb-1">Dansstil</legend>
-          {["barndans", "dansmix", "jazzdans", "hiphop", "breaking", "locking"].map(
-            (style) => (
-              <label key={style} className="flex items-center gap-2 mb-1">
-                <input
-                  type="checkbox"
-                  value={style}
-                  checked={selectedStyles.includes(style)}
-                  onChange={() => toggleValue(style, selectedStyles, setSelectedStyles)}
-                />
-                {style}
-              </label>
-            )
-          )}
+          {filterOptions.styles.map((style) => (
+            <label key={style.value} className="flex items-center gap-2 mb-1">
+              <input
+                type="checkbox"
+                value={style.value}
+                checked={selectedStyles.includes(style.value)}
+                onChange={() => toggleValue(style.value, selectedStyles, setSelectedStyles)}
+              />
+              {style.label}
+            </label>
+          ))}
         </fieldset>
 
         <fieldset>
           <legend className="font-semibold mb-1">Typ</legend>
-          <label className="flex items-center gap-2 mb-1">
-            <input
-              type="checkbox"
-              value="workshop"
-              checked={selectedTypes.includes("workshop")}
-              onChange={() =>
-                toggleValue("workshop", selectedTypes, setSelectedTypes)
-              }
-            />
-            Workshop
-          </label>
+          {filterOptions.types.map((type) => (
+            <label key={type.value} className="flex items-center gap-2 mb-1">
+              <input
+                type="checkbox"
+                value={type.value}
+                checked={selectedTypes.includes(type.value)}
+                onChange={() => toggleValue(type.value, selectedTypes, setSelectedTypes)}
+              />
+              {type.label}
+            </label>
+          ))}
         </fieldset>
       </section>
 

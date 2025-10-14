@@ -11,10 +11,31 @@ export interface MobileMenuProps {
 export interface CourseFilters {
   days?: string[];
   dates?: string[];
-  age?: string[];
+  ages?: string[];
   styles?: string[];
   types?: string[];
-  // antal?: number[]; // ta med om det behövs
+}
+
+export interface FilterOption {
+  label: string;
+  value: string;
+}
+
+export interface FilterOptions {
+  days: FilterOption[];
+  dates: FilterOption[];
+  ages: FilterOption[];
+  styles: FilterOption[];
+  types: FilterOption[];
+}
+
+export interface DrawerFilterProps {
+  filterOptions: FilterOptions;
+}
+
+
+export interface FilterProps {
+  filterOptions: FilterOptions;
 }
 
 export interface Course {

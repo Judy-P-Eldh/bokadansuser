@@ -3,6 +3,7 @@
 import * as React from "react";
 import Filter from "@/components/filter";
 import { Button } from "@/components/ui/button";
+import { DrawerFilterProps } from "@/lib/data/interfaces";
 import {
   Dialog,
   DialogContent,
@@ -22,7 +23,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-export function DrawerFilter() {
+export function DrawerFilter({ filterOptions }: DrawerFilterProps) {
   const [open, setOpen] = React.useState(false);
   const isDesktop = true; // Du kan använda useMediaQuery här
 
@@ -42,7 +43,7 @@ export function DrawerFilter() {
             <DialogTitle>Filtrera</DialogTitle>
             <DialogDescription>Vad är du intresserad av?</DialogDescription>
           </DialogHeader>
-          <Filter />
+           <Filter filterOptions={filterOptions} />
         </DialogContent>
       </Dialog>
     );
@@ -59,7 +60,7 @@ export function DrawerFilter() {
           <DrawerDescription>Vad är du intresserad av?</DrawerDescription>
         </DrawerHeader>
         <div className="px-4">
-          <Filter />
+          <Filter filterOptions={filterOptions} />
         </div>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
