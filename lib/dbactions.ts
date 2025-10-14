@@ -47,10 +47,10 @@ export async function getCoursesWithSchool(filters: CourseFilters = {}) {
     query = query.in("day", filters.days);
   }
 
-  // if (filters.dates && filters.dates.length > 0) {
-  //   console.log("Filtrerar på dates:", filters.dates);
-  //   query = query.in("start_date", filters.dates);
-  // }
+  if (filters.dates && filters.dates.length > 0) {
+    console.log("Filtrerar på dates:", filters.dates);
+    query = query.in("start_date", filters.dates);
+  }
 
   if (filters.age && filters.age.length > 0) {
     console.log("Filtrerar på age:", filters.age);

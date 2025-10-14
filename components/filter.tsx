@@ -46,6 +46,8 @@ export default function Filter() {
       const capitalized = day.charAt(0).toUpperCase() + day.slice(1);
       params.append("days", capitalized);
     });
+
+
     selectedDates.forEach((date) => params.append("dates", date));
     selectedAge.forEach((age) => params.append("age", age));
     selectedStyles.forEach((style) => params.append("styles", style));
@@ -87,7 +89,7 @@ export default function Filter() {
           )}
         </fieldset>
 
-        {/* <fieldset>
+        <fieldset>
           <legend className="font-semibold mb-1">Startdatum</legend>
           {[
             { label: "20 aug", value: "2025-08-20" },
@@ -107,7 +109,7 @@ export default function Filter() {
               {dateObj.label}
             </label>
           ))}
-        </fieldset> */}
+        </fieldset>
 
 
         <fieldset>

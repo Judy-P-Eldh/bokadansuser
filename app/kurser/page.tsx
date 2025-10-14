@@ -13,7 +13,7 @@ export default async function Kurser({
   
   const filters = {
     days: params.days ? (Array.isArray(params.days) ? params.days : [params.days]) : undefined,
-    // dates: params.dates ? (Array.isArray(params.dates) ? params.dates : [params.dates]) : undefined,
+    dates: params.dates ? (Array.isArray(params.dates) ? params.dates : [params.dates]) : undefined,
     age: params.age ? (Array.isArray(params.age) ? params.age : [params.age]) : undefined,
     styles: params.styles ? (Array.isArray(params.styles) ? params.styles : [params.styles]) : undefined,
     types: params.types ? (Array.isArray(params.types) ? params.types : [params.types]) : undefined,
@@ -21,6 +21,8 @@ export default async function Kurser({
 
   const { data: courses, count } = await getCoursesWithSchool(filters);
   
+  const tags = courses.map((c) => c.name);
+
   // Kolla om användaren har några aktiva filter
   const hasActiveFilters = Object.values(filters).some(f => f && f.length > 0);
 
