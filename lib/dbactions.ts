@@ -38,39 +38,35 @@ function stripSeconds(tid: string) {
 }
 
 export async function getCoursesWithSchool(filters: CourseFilters = {}) {
-  console.log("Filters mottagna:", filters);
+  // console.log("Filters mottagna:", filters);
   
   let query = supabase.from("courses").select("*", { count: "exact" });
 
   if (filters.days && filters.days.length > 0) {
-    console.log("Filtrerar på days:", filters.days);
     query = query.in("day", filters.days);
   }
 
   if (filters.dates && filters.dates.length > 0) {
-    console.log("Filtrerar på dates:", filters.dates);
     query = query.in("start_date", filters.dates);
   }
 
   if (filters.ages && filters.ages.length > 0) {
-    console.log("Filtrerar på age:", filters.ages);
+    // console.log("Filtrerar på age:", filters.ages);
     query = query.in("agegroup", filters.ages);
   }
 
   if (filters.styles && filters.styles.length > 0) {
-    console.log("Filtrerar på styles:", filters.styles);
     query = query.in("name", filters.styles);
   }
 
   if (filters.types && filters.types.length > 0) {
-    console.log("Filtrerar på types:", filters.types);
     query = query.in("featured_message", filters.types);
   }
 
   const { data, count, error } = await query;
   
-  console.log("Data från db:", data);
-  console.log("Count:", count);
+  // console.log("Data från db:", data);
+  // console.log("Count:", count);
   
   if (error) {
     throw error;

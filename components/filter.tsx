@@ -50,7 +50,7 @@ export default function Filter({ filterOptions }: FilterProps) {
     });
 
     selectedDates.forEach((date) => params.append("dates", date));
-    selectedAge.forEach((age) => params.append("age", age));
+    selectedAge.forEach((age) => params.append("ages", age));
     selectedStyles.forEach((style) => params.append("styles", style));
     selectedTypes.forEach((type) => params.append("types", type));
 
