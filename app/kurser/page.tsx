@@ -3,7 +3,7 @@ import { DrawerFilter } from "@/components/drawerfilter";
 import Header from "@/components/header";
 import { CourseFilters } from "@/lib/data/interfaces";
 import { getCoursesWithSchool } from "@/lib/dbactions";
-import { FilterOptions, FilterOption } from '@/lib/data/interfaces';
+import { FilterOptions } from '@/lib/data/interfaces';
 
 export default async function Kurser({
   searchParams,

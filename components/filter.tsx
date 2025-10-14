@@ -43,7 +43,6 @@ export default function Filter({ filterOptions }: FilterProps) {
     e.preventDefault();
     const params = new URLSearchParams();
 
-    // Kapitalisera dagarna för att matcha databasen (Monday, Tuesday, etc.)
     selectedDays.forEach((day) => {
       const capitalized = day.charAt(0).toUpperCase() + day.slice(1);
       params.append("days", capitalized);
@@ -90,7 +89,7 @@ export default function Filter({ filterOptions }: FilterProps) {
           )}
         </fieldset>
 
-          <fieldset>
+        <fieldset>
           <legend className="font-semibold mb-1">Startdatum</legend>
           {filterOptions.dates.map((date) => (
             <label key={date.value} className="flex items-center gap-2 mb-1">
@@ -152,22 +151,23 @@ export default function Filter({ filterOptions }: FilterProps) {
         </fieldset>
       </section>
 
-      <button
-        type="submit"
-        disabled={isPending}
-        className="w-full bg-purple-800 text-white py-2 rounded hover:bg-purple-700 disabled:opacity-50"
-      >
-        {isPending ? "Filtrerar..." : "Filtrera"}
-      </button>
-
-      <button
-        type="button"
-        onClick={handleReset}
-        disabled={isPending}
-        className="w-full bg-gray-500 text-white py-2 rounded hover:bg-gray-600 disabled:opacity-50"
-      >
-        Rensa filter
-      </button>
+      <div className="grid gap-2 w-3/4 lg:w-full space-evenly mx-auto">
+        <button
+          type="submit"
+          disabled={isPending}
+          className="w-full bg-purple-800 text-white py-2 rounded hover:bg-purple-700 disabled:opacity-50"
+        >
+          {isPending ? "Filtrerar..." : "Filtrera"}
+        </button>
+        <button
+          type="button"
+          onClick={handleReset}
+          disabled={isPending}
+          className="w-full bg-gray-500 text-white py-2 rounded hover:bg-gray-600 disabled:opacity-50"
+        >
+          Rensa filter
+        </button>
+      </div>
     </form>
   );
 }
