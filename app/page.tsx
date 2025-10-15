@@ -7,10 +7,12 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import RegisterSection from "@/components/registersection";
 import ScheduldeSection from "@/components/schedulesection";
+import { getCourseName } from "@/lib/dbactions";
 // import { getCourses } from "@/lib/dbactions";
 
 export default async function Home() {
-  // const courses = await getCourses();
+  const courseName = await getCourseName("Dansmix 1");
+  console.log('Kursnamn: ', courseName);
   return (
     <main>
       <Header />

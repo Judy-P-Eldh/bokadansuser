@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RegisterForm from "./registerform";
 
 export default async function RegisterInfo() {
     return (
@@ -14,15 +15,9 @@ export default async function RegisterInfo() {
                 </ul>
             </div>
 
-            <div className="mb-4 flex">
-                <Link href="mailto:malin.danslarare@gmail.com" className="w-full bg-purple-600 hover:bg-purple-700 text-center text-white px-6 py-2 rounded-lg font-medium">Skicka kursanmälan</Link>
+                {/* <Link href="mailto:malin.danslarare@gmail.com" className="w-full bg-purple-600 hover:bg-purple-700 text-center text-white px-6 py-2 rounded-lg font-medium">Skicka kursanmälan</Link> */}
 
-                {/* <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
-                    <option>Dansmix 1</option>
-                    <option>Dansmix 2</option>
-                    <option>Showdans</option>
-                </select> */}
-            </div>
+                <RegisterForm />
         </section>
     );
 }

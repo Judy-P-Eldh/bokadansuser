@@ -57,3 +57,11 @@ export interface Course {
   end_date: string;
   nr_times: number;
 }
+
+export interface RegisterFormEntry {
+  studentName: string;
+  studentBirthYear: number;
+  email: string;
+  course: string;
+  parentName: string;
+}

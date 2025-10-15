@@ -11,6 +11,22 @@ export async function getSchools() {
   return { data, count, error };
 }
 
+export async function getCourseName(course: string) {
+ 
+let { data: courses, error } = await supabase
+  .from('courses')
+  .select('name')
+
+
+  if (error) {
+    throw error;
+  }
+
+ const apporvedCourse = courses?.find((c => c.name === course));
+return apporvedCourse;
+  // console.log('Kurs från db: ', apporvedCourse);
+}
+
 export async function getCourses() {
   const { data, count, error } = await supabase
     .from("courses")
@@ -39,7 +55,7 @@ function stripSeconds(tid: string) {
 
 export async function getCoursesWithSchool(filters: CourseFilters = {}) {
   // console.log("Filters mottagna:", filters);
-  
+
   let query = supabase.from("courses").select("*", { count: "exact" });
 
   if (filters.days && filters.days.length > 0) {
@@ -64,10 +80,10 @@ export async function getCoursesWithSchool(filters: CourseFilters = {}) {
   }
 
   const { data, count, error } = await query;
-  
+
   // console.log("Data från db:", data);
   // console.log("Count:", count);
-  
+
   if (error) {
     throw error;
   }
