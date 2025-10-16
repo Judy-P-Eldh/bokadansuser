@@ -27,6 +27,20 @@ return apporvedCourse;
   // console.log('Kurs från db: ', apporvedCourse);
 }
 
+export async function getCourseNames() {
+  let { data: courses, error } = await supabase
+  .from('courses')
+  .select('id, name')
+
+  if (error) {
+    console.error('Error fetching course names:', error);
+    return null;
+  }
+//  console.log('Fetched courses:', courses); // Add this to debug
+
+  return courses;
+}
+
 export async function getCourses() {
   const { data, count, error } = await supabase
     .from("courses")

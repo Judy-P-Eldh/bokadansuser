@@ -7,12 +7,14 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import RegisterSection from "@/components/registersection";
 import ScheduldeSection from "@/components/schedulesection";
-import { getCourseName } from "@/lib/dbactions";
+import { getCourseName, getCourseNames } from "@/lib/dbactions";
 // import { getCourses } from "@/lib/dbactions";
 
 export default async function Home() {
   const courseName = await getCourseName("Dansmix 1");
   console.log('Kursnamn: ', courseName);
+
+   const courseNames = await getCourseNames(); //Skicka in i registerSection
   return (
     <main>
       <Header />

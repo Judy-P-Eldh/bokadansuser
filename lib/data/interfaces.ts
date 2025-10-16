@@ -65,3 +65,10 @@ export interface RegisterFormEntry {
   course: string;
   parentName: string;
 }
+
+export interface FormParams {
+  courseNames: {
+    id: number;
+    name: string;
+  }[];
+}

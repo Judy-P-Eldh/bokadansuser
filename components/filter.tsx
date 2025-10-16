@@ -2,7 +2,6 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
-import { FilterOptions } from "@/lib/data/interfaces";
 import { FilterProps } from "@/lib/data/interfaces";
 
 export default function Filter({ filterOptions }: FilterProps) {
