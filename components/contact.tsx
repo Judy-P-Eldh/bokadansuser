@@ -1,5 +1,5 @@
 import ContactCards from "./contactcards";
-import ContactInfo from "./contactinfo";
+import ContactForm from "./contactform";
 import MapSection from "./mapsection";
 
 export default function Contact() {
@@ -16,7 +16,7 @@ export default function Contact() {
               <MapSection />
               <div className="md:w-1/2 p-8">
                 <h3 className="text-2xl font-bold text-purple-800 mb-6">Mejla oss</h3>
-                <ContactInfo />
+                <ContactForm />
               </div>
             </div>
           </div>

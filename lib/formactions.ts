@@ -31,3 +31,21 @@ export async function handleRegisterSubmit(formData: FormData) {
   console.log(registerFormEntry);
   console.log(data.course);
 }
+
+export async function sendContactForm(formData: FormData) {
+  const name = formData.get('name');
+  const epost = formData.get('epost');
+  const subject = formData.get('subject');
+  const message = formData.get('message');
+
+  formData.append("access_key", "fc92888b-c7c3-457e-9dc8-40117efe885d");
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData,
+  });
+  const data = await response.json();
+
+  console.log('Server: Formulär mottaget',{ name, epost, subject, message });
+  console.log("Kontaktformulär skickat");
+}
