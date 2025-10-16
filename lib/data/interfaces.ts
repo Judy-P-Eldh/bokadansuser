@@ -33,7 +33,6 @@ export interface DrawerFilterProps {
   filterOptions: FilterOptions;
 }
 
-
 export interface FilterProps {
   filterOptions: FilterOptions;
 }
@@ -70,5 +69,7 @@ export interface FormParams {
   courseNames: {
     id: number;
     name: string;
+    min_birth_year?: number | null;
+    max_birth_year?: number | null;
   }[];
 }

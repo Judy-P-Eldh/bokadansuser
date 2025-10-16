@@ -30,7 +30,8 @@ return apporvedCourse;
 export async function getCourseNames() {
   let { data: courses, error } = await supabase
   .from('courses')
-  .select('id, name')
+  .select('id, name, min_birth_year, max_birth_year')
+   .order('name');
 
   if (error) {
     console.error('Error fetching course names:', error);
