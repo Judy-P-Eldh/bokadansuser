@@ -7,7 +7,7 @@ export default function RegisterButton() {
             href="#register"
             className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-medium"
           >
-            Anmälan sker via mejl
+            Skicka kursanmälan
           </Link>
         </div>
     );

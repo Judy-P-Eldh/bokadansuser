@@ -1,6 +1,11 @@
-import Link from "next/link";
+import RegisterForm from "./registerform";
+import { getCourseNames } from "@/lib/dbactions";
 
 export default async function RegisterInfo() {
+    const coursresult = await getCourseNames();
+    // Pass the full course objects, not just names
+    const courseNames = coursresult ?? [];
+    
     return (
         <section className="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
             <h3 className="text-xl font-bold mb-4 text-center">Säkra din plats på kursen!</h3>
@@ -13,16 +18,7 @@ export default async function RegisterInfo() {
                     <li>förälders namn och telefonnummer</li>
                 </ul>
             </div>
-
-            <div className="mb-4 flex">
-                <Link href="mailto:malin.danslarare@gmail.com" className="w-full bg-purple-600 hover:bg-purple-700 text-center text-white px-6 py-2 rounded-lg font-medium">Skicka kursanmälan</Link>
-
-                {/* <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
-                    <option>Dansmix 1</option>
-                    <option>Dansmix 2</option>
-                    <option>Showdans</option>
-                </select> */}
-            </div>
+            <RegisterForm courseNames={courseNames} />
         </section>
     );
 }
