@@ -59,9 +59,9 @@ export function DrawerFilter({ filterOptions }: DrawerFilterProps) {
           <DrawerTitle>Filtrera</DrawerTitle>
           <DrawerDescription>Vad är du intresserad av?</DrawerDescription>
         </DrawerHeader>
-        <div className="px-4">
+        {/* <div className="px-4">
           <Filter filterOptions={filterOptions} />
-        </div>
+        </div> */}
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
             <Button variant="outline">Stäng</Button>

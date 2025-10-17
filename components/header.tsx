@@ -8,7 +8,7 @@ import MobileMenu from "./mobilemenu";
 export default function Header() {
      const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="top-0 z-50">
+    <header className="md:flex-none sticky top-0 z-50 shadow-sm">
       <nav className="bg-white">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex gap-3 items-center">
