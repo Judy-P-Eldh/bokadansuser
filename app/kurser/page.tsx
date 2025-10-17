@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import { CourseFilters } from "@/lib/data/interfaces";
 import { getCoursesWithSchool } from "@/lib/db";
 import { FilterOptions } from '@/lib/data/interfaces';
+import Filter from "@/components/filter";
 
 export default async function Kurser({
   searchParams,
@@ -56,14 +57,23 @@ export default async function Kurser({
   const hasActiveFilters = Object.values(filters).some(f => f && f.length > 0);
 
   return (
-    <main>
-      <Header />
-      <DrawerFilter filterOptions={filterOptions} />
+    <main className="h-screen overflow-y-auto">
+  <Header />
+  <div className="page-divider md:flex">
+    <aside className="filter-section my-8 mx-4 md:w-1/4 py-8 md:sticky md:top-50 md:self-start">
+      <h2 className="font-nunito text-3xl text-center font-bold text-purple-800 mb-8">
+        Filter
+      </h2>
+      <Filter filterOptions={filterOptions} />
+    </aside>
+    <div className="class-card-section md:w-3/4">
       <Classes
         courses={courses || []}
         count={count || 0}
         hasActiveFilters={hasActiveFilters}
       />
-    </main>
+    </div>
+  </div>
+</main>
   );
 }

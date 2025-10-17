@@ -70,7 +70,7 @@ export default function Filter({ filterOptions }: FilterProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <section className="grid lg:grid-cols-3 grid-cols-2 mx-auto gap-2 p-4 lg:w-full w-sm h-150 border-purple-600 rounded-lg text-sm">
+      <section className="grid grid-cols-3 mx-auto gap-2 w-sm  border-purple-600 rounded-lg text-sm">
         <fieldset>
           <legend className="font-semibold mb-1">Dag</legend>
           {["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"].map(
