@@ -28,7 +28,7 @@ export default function ContactCards() {
                     <MailIcon />
                 </div>
                 <h3 className="text-xl font-bold text-purple-800 mb-2">Skicka e-post</h3>
-                <p className="text-gray-700"> <a href="mailto:malin.danslarare@gmail.com">malin.danslarare@gmail.com</a> </p>
+                <p className="text-gray-700"> <a href="mailto:bizadvancers@gmail.com">bizadvancers@gmail.com</a> </p>
                 <p>Jag svarar så fort jag kan.</p>
             </div>
         </section>

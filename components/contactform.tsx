@@ -1,5 +1,5 @@
 "use client";
-import { sendContactForm } from "@/lib/formactions";
+import { sendContactForm } from "@/lib/actions";
 import Form from "next/form";
 
 export default function ContactForm() {

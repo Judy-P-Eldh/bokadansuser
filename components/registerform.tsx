@@ -1,5 +1,5 @@
 "use client";
-import { handleRegisterSubmit } from "@/lib/formactions";
+import { handleRegisterSubmit } from "@/lib/actions";
 import Form from "next/form";
 import { FormParams } from "@/lib/data/interfaces";
 import { useState } from "react";

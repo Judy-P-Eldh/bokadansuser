@@ -2,7 +2,7 @@ import Classes from "@/components/classes";
 import { DrawerFilter } from "@/components/drawerfilter";
 import Header from "@/components/header";
 import { CourseFilters } from "@/lib/data/interfaces";
-import { getCoursesWithSchool } from "@/lib/dbactions";
+import { getCoursesWithSchool } from "@/lib/db";
 import { FilterOptions } from '@/lib/data/interfaces';
 
 export default async function Kurser({

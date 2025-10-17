@@ -19,9 +19,9 @@ export default function Header() {
               width={100}
               height={500}
             />
-            <p className="font-nunito-sans text-xl font-bold text-purple-800">
+            <h1 className="font-nunito-sans text-xl font-bold text-purple-800">
               Boka Danskurser
-            </p>
+            </h1>
           </div>
 
           {/* <!-- Desktop Menu --> */}

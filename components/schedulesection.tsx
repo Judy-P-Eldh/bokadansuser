@@ -1,4 +1,4 @@
-import { getCourses } from "@/lib/dbactions";
+import { getCourses } from "@/lib/db";
 import Link from "next/link";
 import TableItem from "./tableitem";
 import ScheduleItem from "./scheduleitem";
@@ -7,7 +7,7 @@ export default async function ScheduldeSection() {
   const { data: courses, error } = await getCourses();
   // count,
   if (error) {
-    return <div>Fel vid hämtning: {error.message}</div>;
+    return <div>Fel vid hämtning: {error}</div>;
   }
 
   if (!courses || courses.length === 0) {
