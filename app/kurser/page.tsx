@@ -1,5 +1,4 @@
 import Classes from "@/components/pagesections/classes";
-import { DrawerFilter } from "@/components/drawerfilter";
 import Header from "@/components/pagesections/header";
 import { CourseFilters } from "@/lib/data/interfaces";
 import { getCoursesWithSchool } from "@/lib/db";
