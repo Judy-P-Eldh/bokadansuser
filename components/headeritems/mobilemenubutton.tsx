@@ -14,6 +14,7 @@ export default function MobileMenuButton({ isOpen, setIsOpen }: MobileMenuButton
                 }}
                 className="text-gray-700"
             >
+                <p className="sr-only">menyknapp</p>
                 <SquareMenu className="text-2xl" />
             </button>
         </div>

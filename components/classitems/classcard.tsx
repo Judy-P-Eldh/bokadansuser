@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import RegisterButton from "../registeritems/registerbutton";
 
 export default function ClassCard({
   name,
@@ -16,7 +17,6 @@ export default function ClassCard({
   end_time,
   start_date,
   end_date,
-  // nr_times,
   school_id,
 }: {
   name: string;
@@ -33,7 +33,6 @@ export default function ClassCard({
   end_time: string;
   start_date: string;
   end_date: string;
-  // nr_times: number;
   school_id: number;
 }) {
   return (
@@ -46,33 +45,62 @@ export default function ClassCard({
         height={100}
         priority
       />
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-purple-800 mb-2">{name}</h3>
-        {featured &&  <p className={`text-purple-900 font-medium`}>{featured_message}</p>}
-        <p className="text-purple-600 font-medium">
-          {day} kl. {start_time} - {end_time}
-        </p>
-        <p className="text-purple-600 font-medium">{level}</p>
-        <p className="text-gray-700 mb-4">{description}</p>
-        <p className="text-gray-700 mb-4">
-          {start_date} till {end_date} 
-          {/* : {nr_times} ggr. */}
-        </p>
-        <p className="text-gray-700 mb-4">
-          {price} kr.
-        </p>
-          <p className="text-gray-700 mb-4">
-          Skola nr: {school_id}
-        </p>
+      <div className="p-6 grid h-150">
 
-        <div className="flex justify-between items-center">
-          <span className="text-purple-600 font-medium">{agegroup} födda:({min_birth_year} -{max_birth_year})</span>
-          <Link
-            href="/dansstilar"
-            className="text-purple-600 hover:text-purple-800 font-medium"
-          >
-            Läs mer →
+        <div className="card-header flex items-start justify-between">
+          <h3 className="text-xl font-bold text-purple-800">{name}</h3>
+          {featured && <p className={`text-purple-900 font-medium`}>{featured_message}</p>}
+        </div>
+
+        <div className="card-info">
+          <p className="text-purple-600 font-medium">{day} kl. {start_time} - {end_time}</p>
+          <p className="text-purple-600 font-medium">{level}</p>
+        </div>
+
+        <div className="card-description h-30 overflow-y-auto">
+          <p className="text-gray-700">{description}</p>
+          <Link href="/dansstilar" className="text-purple-600 hover:text-purple-800 font-medium">
+            Mer om dansstilen →
           </Link>
+        </div>
+
+        <div className="card-facts space-y-2">
+
+          <div className="flex justify-between border-b-2">
+            <p className="text-gray-700 w-1.5">Start:</p>
+            <p className="">{start_date}</p>
+          </div>
+
+          <div className="flex gap-4 justify-between border-b-2">
+            <p className="text-gray-700 w-1.5">Slut:</p>
+            <p className="">{end_date}</p>
+          </div>
+
+          <div className="flex gap-4 justify-between border-b-2">
+            <p className="text-gray-700 w-1.5">Pris:</p>
+            <p>{price} kr</p>
+          </div>
+
+          <div className="flex justify-between border-b-2">
+            <p className="text-gray-700">Skola:</p>
+            <p className="">{school_id}</p>
+          </div>
+
+          <div className="flex justify-between border-b-2">
+            <p className="text-gray-700">Ålder:</p>
+            <p>{agegroup} år</p>
+          </div>
+          {min_birth_year &&
+            <div className="flex justify-between border-b-2">
+              <p className={`text-purple-900 font-medium`}>
+                Födda:</p>
+              <p className="text-purple-900 font-medium">{min_birth_year} -{max_birth_year}</p>
+            </div>
+          }
+        </div>
+
+        <div className="card-button text-center flex items-end">
+          <RegisterButton />
         </div>
       </div>
     </div>
