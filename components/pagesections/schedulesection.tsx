@@ -18,12 +18,7 @@ export default async function ScheduldeSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-purple-800 mb-4">Schema</h2>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            Pris per kurs: 850 kr.
-          </p>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            Maxantal 15 elever per grupp.
-          </p>
+           <p className="text-gray-700 max-w-2xl mx-auto">Hitta rätt kurs för dig.</p>
         </div>
 
         {/* Tabellvisning för medium och större skärmar */}
