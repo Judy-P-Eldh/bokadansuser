@@ -1,5 +1,5 @@
 import { CheckIcon } from "lucide-react";
-import RegisterInfo from "./registerinfo";
+import RegisterInfo from "../registeritems/registerinfo";
 
 export default function RegisterSection() {
     return(

@@ -1,7 +1,7 @@
 import { getCourses } from "@/lib/db";
 import Link from "next/link";
-import TableItem from "./tableitem";
-import ScheduleItem from "./scheduleitem";
+import ScheduleItem from "../scheduleitems/scheduleitem";
+import TableItem from "../scheduleitems/tableitem";
 
 export default async function ScheduldeSection() {
   const { data: courses, error } = await getCourses();

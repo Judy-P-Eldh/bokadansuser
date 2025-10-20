@@ -1,7 +1,7 @@
 // DrawerFilter.tsx
 "use client";
 import * as React from "react";
-import Filter from "@/components/filter";
+import Filter from "@/components/pagesections/filter";
 import { Button } from "@/components/ui/button";
 import { DrawerFilterProps } from "@/lib/data/interfaces";
 import {

@@ -1,5 +1,5 @@
 import { faqtexts } from "@/lib/data/faqtexts.json";
-import FaqItem from "./faqitem";
+import FaqItem from "../faqitems/faqitem";
 
 export default function FaqSection() {
     const faqs = faqtexts;

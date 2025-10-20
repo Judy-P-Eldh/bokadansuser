@@ -1,6 +1,6 @@
-import ContactCards from "./contactcards";
-import ContactForm from "./contactform";
-import MapSection from "./mapsection";
+import ContactCards from "../contactitems/contactcards";
+import ContactForm from "../contactitems/contactform";
+import MapSection from "../contactitems/mapsection";
 
 export default function Contact() {
     return(

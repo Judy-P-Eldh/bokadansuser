@@ -1,10 +1,10 @@
-import Classes from "@/components/classes";
+import Classes from "@/components/pagesections/classes";
 import { DrawerFilter } from "@/components/drawerfilter";
-import Header from "@/components/header";
+import Header from "@/components/pagesections/header";
 import { CourseFilters } from "@/lib/data/interfaces";
 import { getCoursesWithSchool } from "@/lib/db";
 import { FilterOptions } from '@/lib/data/interfaces';
-import Filter from "@/components/filter";
+import Filter from "@/components/pagesections/filter";
 
 export default async function Kurser({
   searchParams,

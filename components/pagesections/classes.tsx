@@ -1,4 +1,4 @@
-import ClassCard from "./classcard";
+import ClassCard from "../classitems/classcard";
 
 type ClassesProps = {
   courses: any[];

@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import DesktopMenu from "./desktopmenu";
-import MobileMenuButton from "./mobilemenubutton";
-import MobileMenu from "./mobilemenu";
+import DesktopMenu from "../headeritems/desktopmenu";
+import MobileMenuButton from "../headeritems/mobilemenubutton";
+import MobileMenu from "../headeritems/mobilemenu";
 
 export default function Header() {
      const [isOpen, setIsOpen] = useState(false);

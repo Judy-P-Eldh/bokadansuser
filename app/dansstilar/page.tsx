@@ -1,7 +1,7 @@
-import ContactCards from "@/components/contactcards";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import Hero from "@/components/hero";
+import ContactCards from "@/components/contactitems/contactcards";
+import Footer from "@/components/pagesections/footer";
+import Header from "@/components/pagesections/header";
+import Hero from "@/components/pagesections/hero";
 import { Circle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
