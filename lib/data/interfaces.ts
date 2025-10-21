@@ -79,3 +79,9 @@ export interface FormParams {
     max_birth_year?: number | null;
   }[];
 }
+
+export interface DanceStyle {
+  id: number;
+  name: string;
+  description: string;
+}

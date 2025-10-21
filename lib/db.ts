@@ -1,4 +1,4 @@
-import { CourseFilters } from "./data/interfaces";
+import { CourseFilters, DanceStyle } from "./data/interfaces";
 import { supabase } from "./supabase";
 
 export async function getSchools() {
@@ -10,6 +10,20 @@ export async function getSchools() {
   }
   return { data, count, error };
 }
+
+export async function getDanceStyles(): Promise<{ data: DanceStyle[] }> {
+  const { data, error } = await supabase.from("dancestyles").select("*").order('id', { ascending: false });
+ if (error) {
+    console.error("Error fetching dancestyles:", error);
+    throw new Error(error.message);
+  }
+
+  if (!data) {
+    throw new Error("No data returned from dancestyles query.");
+  }
+  return { data };
+}
+
 
 export async function getCourseName(course: string) {
   const { data: courses, error } = await supabase.from("courses").select("name");
