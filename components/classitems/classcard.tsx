@@ -56,15 +56,14 @@ export default function ClassCard({
           <p className="text-purple-600 font-medium">{day} kl. {start_time} - {end_time}</p>
           <p className="text-purple-600 font-medium">{level}</p>
         </div>
-        <div>
-          <div className="card-description h-30 overflow-y-auto">
-            <p className="text-gray-700">{description}</p>
-          </div>
 
+        <div className="card-description h-30 overflow-y-auto">
+          <p className="text-gray-700 overflow-hidden line-clamp-3 text-ellipsis">{description}</p>
           <Link href="/dansstilar" className="text-purple-600 hover:text-purple-800 font-medium">
-            Mer om {name} →
+            Läs mer om {name} →
           </Link>
         </div>
+
         <div className="card-facts space-y-2">
 
           <div className="flex justify-between border-b-2">
