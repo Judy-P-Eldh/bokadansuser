@@ -2,25 +2,17 @@ import ContactCards from "@/components/contactitems/contactcards";
 import Footer from "@/components/pagesections/footer";
 import Header from "@/components/pagesections/header";
 import Hero from "@/components/pagesections/hero";
-import { getCourseSchool } from "@/lib/db";
 import { Circle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Dansstilar() {
-      const { data: courses, count } = await getCourseSchool();
-      console.log(courses.length);
-      
     return (
         <div className="h-dvh">
             <Header />
             <Hero />
             {/* Dansstil 1 */}
             <section className="py-16 bg-white">
-
-            {/* {courses.map((course) => (
-                <p key={course.id}>{course.school_id} {course.schools.name}</p>
-            ))} */}
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center">
                         <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">

@@ -99,9 +99,8 @@ export async function getCoursesWithSchool(filters: CourseFilters = {}) {
 }
 
   const { data, count, error } = await query;
-
-  console.log("Data från db:", data);
-  console.log("Count:", count);
+  // console.log("Data från db:", data);
+  // console.log("Count:", count);
 
   if (error) {
     throw error;
@@ -125,8 +124,8 @@ export async function getCourseSchool() {
     .select(`*, schools(*)`, { count: "exact" });
 
   const { data, count, error } = await query;
-  console.log("Data från db:", data);
-  console.log("Count:", count);
+  // console.log("Data från db:", data);
+  // console.log("Count:", count);
   if (data) {
     data.forEach((course) => {
       if (course.start_time || course.end_time) {

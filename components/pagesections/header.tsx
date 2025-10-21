@@ -17,7 +17,7 @@ export default function Header() {
               src="/logga.png"
               alt="logga"
               width={100}
-              height={500}
+              height={100}
             />
             <h1 className="font-nunito-sans text-xl font-bold text-purple-800">
               Boka Danskurser

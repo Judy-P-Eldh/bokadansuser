@@ -12,7 +12,7 @@ export default function FaqItem({ question, answer }: { question: string; answer
                 onClick={() => setIsOpen(!isOpen)}
                 aria-expanded={isOpen}
             >
-                <h4>{question}</h4>
+                <h3>{question}</h3>
                 <span className={`transform transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}>
                     <PlusIcon />
                 </span>
