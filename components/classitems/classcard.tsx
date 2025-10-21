@@ -18,6 +18,7 @@ export default function ClassCard({
   start_date,
   end_date,
   school_id,
+  school,
 }: {
   name: string;
   level: string;
@@ -34,6 +35,7 @@ export default function ClassCard({
   start_date: string;
   end_date: string;
   school_id: number;
+  school:string;
 }) {
   return (
     <div className="grid grid-rows-[auto_1fr] dance-card bg-white rounded-lg overflow-hidden shadow-lg">
@@ -83,7 +85,7 @@ export default function ClassCard({
 
           <div className="flex justify-between border-b-2">
             <p className="text-gray-700">Skola:</p>
-            <p className="">{school_id}</p>
+            <p className="">{school}</p>
           </div>
 
           <div className="flex justify-between border-b-2">

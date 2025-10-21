@@ -75,6 +75,7 @@ export default async function Classes({
               start_date={course.start_date}
               end_date={course.end_date}
               school_id={course.school_id}
+              school={course.schools?.name || 'Okänd skola'}
             />
           ))}
         </div>
