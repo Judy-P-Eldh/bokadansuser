@@ -17,25 +17,23 @@ export default function ClassCard({
   end_time,
   start_date,
   end_date,
-  school_id,
   school,
 }: {
   name: string;
   level: string;
   description: string;
-  agegroup: string;
+  agegroup: string | null;  // Ändrat  
   price: number;
-  featured: boolean;
-  featured_message: string;
-  min_birth_year: number;
-  max_birth_year: number;
+   featured: boolean | null;  // Ändrat
+    featured_message: string | null;  // Ändrat
+   min_birth_year: number | null;  // Ändrat
+  max_birth_year: number | null;  // Ändrat
   day: string;
-  start_time: string; //new Date(item.time);
-  end_time: string;
+    start_time: string | null;  // Ändrat
+  end_time: string | null;  // Ändrat
   start_date: string;
   end_date: string;
-  school_id: number;
-  school:string;
+  school: string;
 }) {
   return (
     <div className="grid grid-rows-[auto_1fr] dance-card bg-white rounded-lg overflow-hidden shadow-lg">

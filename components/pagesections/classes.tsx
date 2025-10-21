@@ -1,7 +1,8 @@
+import { Course } from "@/lib/data/interfaces";
 import ClassCard from "../classitems/classcard";
 
 type ClassesProps = {
-  courses: any[];
+  courses: Course[];
   count: number;
   hasActiveFilters?: boolean;
 };
@@ -74,7 +75,6 @@ export default async function Classes({
               end_time={course.end_time}
               start_date={course.start_date}
               end_date={course.end_date}
-              school_id={course.school_id}
               school={course.schools?.name || 'Okänd skola'}
             />
           ))}
