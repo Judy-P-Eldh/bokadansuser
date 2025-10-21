@@ -87,7 +87,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
         >
           <option value="">Välj en kurs...</option>
           {courseNames.map((course) => (
-            <option key={course.id} value={course.id}>
+            <option key={course.id} value={course.name}>
               {course.name}
               {course.min_birth_year && course.max_birth_year
                 ? ` (${course.min_birth_year}-${course.max_birth_year})`
