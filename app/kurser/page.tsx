@@ -18,6 +18,7 @@ export default async function Kurser({
     ages: params.ages ? (Array.isArray(params.ages) ? params.ages : [params.ages]) : undefined,
     styles: params.styles ? (Array.isArray(params.styles) ? params.styles : [params.styles]) : undefined,
     types: params.types ? (Array.isArray(params.types) ? params.types : [params.types]) : undefined,
+    school_ids: params.school_ids ? (Array.isArray(params.school_ids) ? params.school_ids : [params.school_ids]) : undefined,
   };
 
   const { data: courses, count } = await getCoursesWithSchool(filters);
@@ -49,6 +50,15 @@ export default async function Kurser({
       .map(type => ({
         label: type as string,
         value: type as string
+      })),
+    schools: [...new Map(
+      courses
+        .filter(c => c.schools && c.schools.name) // Filtrera bort null-värden
+        .map((c) => [c.school_id, { id: c.school_id, name: c.schools.name }])
+    ).values()]
+      .map(school => ({
+        label: school.name,
+        value: school.id.toString()
       }))
   };
 
@@ -57,22 +67,22 @@ export default async function Kurser({
 
   return (
     <main className="h-screen overflow-y-auto">
-  <Header />
-  <div className="page-divider md:flex">
-    <aside className="filter-section my-8 mx-4 md:w-1/4 py-8 md:sticky md:top-50 md:self-start">
-      <h2 className="font-nunito text-3xl text-center font-bold text-purple-800 mb-8">
-        Filter
-      </h2>
-      <Filter filterOptions={filterOptions} />
-    </aside>
-    <div className="class-card-section md:w-3/4">
-      <Classes
-        courses={courses || []}
-        count={count || 0}
-        hasActiveFilters={hasActiveFilters}
-      />
-    </div>
-  </div>
-</main>
+      <Header />
+      <div className="page-divider md:flex">
+        <aside className="filter-section my-8 mx-4 md:w-1/4 py-8 md:sticky md:top-50 md:self-start">
+          <h2 className="font-nunito text-3xl text-center font-bold text-purple-800 mb-8">
+            Filter
+          </h2>
+          <Filter filterOptions={filterOptions} />
+        </aside>
+        <div className="class-card-section md:w-3/4">
+          <Classes
+            courses={courses || []}
+            count={count || 0}
+            hasActiveFilters={hasActiveFilters}
+          />
+        </div>
+      </div>
+    </main>
   );
 }

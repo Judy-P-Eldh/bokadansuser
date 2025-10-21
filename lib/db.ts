@@ -67,7 +67,9 @@ function stripSeconds(tid: string) {
 export async function getCoursesWithSchool(filters: CourseFilters = {}) {
   // console.log("Filters mottagna:", filters);
 
-  let query = supabase.from("courses").select( `*, schools(id, name)`, { count: "exact" });
+  let query = supabase
+    .from("courses")
+    .select(`*, schools(id, name)`, { count: "exact" });
 
   if (filters.days && filters.days.length > 0) {
     query = query.in("day", filters.days);
@@ -89,6 +91,12 @@ export async function getCoursesWithSchool(filters: CourseFilters = {}) {
   if (filters.types && filters.types.length > 0) {
     query = query.in("featured_message", filters.types);
   }
+
+  if (filters.school_ids && filters.school_ids.length > 0) {
+  // Konvertera strings till numbers
+  const schoolIds = filters.school_ids.map(id => parseInt(id));
+  query = query.in("school_id", schoolIds);
+}
 
   const { data, count, error } = await query;
 
@@ -112,16 +120,15 @@ export async function getCoursesWithSchool(filters: CourseFilters = {}) {
 }
 
 export async function getCourseSchool() {
-  let query = supabase.from("courses").select(
-    `*, schools(*)`,
-    { count: "exact" }
-  );
+  let query = supabase
+    .from("courses")
+    .select(`*, schools(*)`, { count: "exact" });
 
   const { data, count, error } = await query;
   console.log("Data från db:", data);
   console.log("Count:", count);
- if (data) {
-  data.forEach((course) => {
+  if (data) {
+    data.forEach((course) => {
       if (course.start_time || course.end_time) {
         course.start_time = stripSeconds(course.start_time);
         course.end_time = stripSeconds(course.end_time);
@@ -130,13 +137,12 @@ export async function getCourseSchool() {
 
     data.forEach((schools) => {
       if (schools.id || schools.id) {
-       schools.name = schools.name;
-       console.log(schools.name);
+        schools.name = schools.name;
+        console.log(schools.name);
       }
     });
-   
- }
- 
+  }
+
   if (error) {
     throw error;
   }

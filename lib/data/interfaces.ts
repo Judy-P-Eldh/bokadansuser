@@ -14,6 +14,7 @@ export interface CourseFilters {
   ages?: string[];
   styles?: string[];
   types?: string[];
+  school_ids?: string[]; // Ändrat från schools till school_ids
 }
 
 export interface FilterOption {
@@ -27,6 +28,7 @@ export interface FilterOptions {
   ages: FilterOption[];
   styles: FilterOption[];
   types: FilterOption[];
+  schools: FilterOption[];
 }
 
 export interface DrawerFilterProps {
@@ -49,6 +51,10 @@ export interface Course {
   min_birth_year: number | null;
   max_birth_year: number | null;
   school_id: number;
+   schools: { // Ändrat från school: string till schools: object
+    id: number;
+    name: string;
+  } | null;
   day: string;
   start_time: string | null;
   end_time: string | null;

@@ -25,6 +25,9 @@ export default function Filter({ filterOptions }: FilterProps) {
   const [selectedTypes, setSelectedTypes] = useState<string[]>(
     searchParams.getAll("types")
   );
+  const [selectedSchools, setSelectedSchools] = useState<string[]>(
+    searchParams.getAll("school_ids") // Ändrat till school_ids
+  );
 
   const toggleValue = (
     value: string,
@@ -51,6 +54,7 @@ export default function Filter({ filterOptions }: FilterProps) {
     selectedAge.forEach((age) => params.append("ages", age));
     selectedStyles.forEach((style) => params.append("styles", style));
     selectedTypes.forEach((type) => params.append("types", type));
+    selectedSchools.forEach((school) => params.append("school_ids", school));
 
     startTransition(() => {
       router.push(`/kurser?${params.toString()}`);
@@ -63,6 +67,7 @@ export default function Filter({ filterOptions }: FilterProps) {
     setSelectedAge([]);
     setSelectedStyles([]);
     setSelectedTypes([]);
+    setSelectedSchools([]);
     startTransition(() => {
       router.push("/kurser");
     });
@@ -145,6 +150,21 @@ export default function Filter({ filterOptions }: FilterProps) {
                 onChange={() => toggleValue(type.value, selectedTypes, setSelectedTypes)}
               />
               {type.label}
+            </label>
+          ))}
+        </fieldset>
+
+        <fieldset>
+          <legend className="font-semibold mb-1">Skola</legend>
+          {filterOptions.schools.map((school) => (
+            <label key={school.value} className="flex items-center gap-2 mb-1">
+              <input
+                type="checkbox"
+                value={school.value}
+                checked={selectedSchools.includes(school.value)}
+                onChange={() => toggleValue(school.value, selectedSchools, setSelectedSchools)}
+              />
+              {school.label}
             </label>
           ))}
         </fieldset>
