@@ -65,7 +65,7 @@ export default async function Dansstilar() {
             </section>
 
             {/* Dansstil 2 */}
-            <section className="py-16 bg-white">
+            <section className="py-16 bg-gray-100">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center">
                         <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
@@ -100,6 +100,51 @@ export default async function Dansstilar() {
                                     Tisdagar kl. 18:30
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Dansstil 3 */}
+            <section className="py-16 bg-white">
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-col md:flex-row items-center">
+                        <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                            <h2 className="font-nunito text-3xl font-bold text-purple-800 mb-4">Breaking</h2>
+                            <p className="text-gray-700 mb-4">Breakdance, alternativt breakdans, är dansstilen mer alldagliga namn,
+                                efter att massmedier introducerat dansen för världen. Dansstilen, som är ett av elementen i den ursprungliga hiphop-kulturen från 1970-talet,
+                                var populär under 1980-talet. De fyra elementen inom hiphop är DJ, graffiti, rap och breaking.
+                            </p>
+                            <div className="flex gap-4">
+                                <p className="text-purple-900 mb-4">
+                                    <Link href="/#schedule" className="hover:underline">Se schema</Link>
+                                </p>
+                                <p className="text-purple-900 mb-4">
+                                    <Link href="/#register" className="hover:underline">Till kursanmälan</Link>
+                                </p>
+                            </div>
+                            <ul className="flex flex-wrap gap-4 mt-4 list-disc">
+                                <li className="flex items-center">
+                                    <Circle className="fill-purple-700 mr-2" />
+                                    Breaking N - Måndagar kl. 18:00
+                                </li>
+                                <li className="flex items-center">
+                                    <Circle className="fill-purple-700 mr-2" />
+                                    Breaking A - Torsdagar kl. 19:00
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="md:w-1/2">
+                            <div className="relative">
+                                <Image
+                                    className="dark:invert rounded-lg shadow-xl w-full"
+                                    src="/breakdancekids.jpeg"
+                                    alt="Barn som dansar breakdance."
+                                    width={500}
+                                    height={100}
+                                    priority
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
