@@ -20,7 +20,7 @@ export default function About() {
             <ul className="flex flex-wrap gap-4 list-disc">
               <li className="flex items-center">
                 <Circle className="fill-purple-700 mr-2" />
-                Här finns dansklasser för ala åldrar.
+                Här finns dansklasser för alla åldrar.
               </li>
             </ul>
           </div>
