@@ -2,6 +2,7 @@ import ContactCards from "@/components/contactitems/contactcards";
 import Footer from "@/components/pagesections/footer";
 import Header from "@/components/pagesections/header";
 import Hero from "@/components/pagesections/hero";
+import Hero2 from "@/components/pagesections/hero2";
 import { Circle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +11,7 @@ export default async function Dansstilar() {
     return (
         <div className="h-dvh">
             <Header />
-            <Hero />
+            <Hero2 />
             {/* Dansstil 1 */}
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4">
