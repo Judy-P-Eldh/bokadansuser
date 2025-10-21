@@ -1,7 +1,6 @@
 "use server";
 
 import { RegisterFormEntry } from "./data/interfaces";
-// import { getCourseName } from "./dbactions";
 
 export async function handleRegisterSubmit(formData: FormData) {
   const course = formData.get("course") as string;
@@ -10,7 +9,6 @@ export async function handleRegisterSubmit(formData: FormData) {
   const parentName = formData.get("parentName") as string;
   const email = formData.get("email") as string;
   // Validering och spara data, skicka mail eller liknande
-//  const courseName = await getCourseName(course);
 
   const birthYear = Number(studentBirthYear);
   const registerFormEntry: RegisterFormEntry = {
