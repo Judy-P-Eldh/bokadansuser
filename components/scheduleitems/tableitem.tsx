@@ -2,21 +2,14 @@ import Link from "next/link";
 
 export default function TableItem({
   name,
-  description,
   level,
   agegroup,
   price,
-  featured,
-  featured_message,
-  min_birth_year,
-  max_birth_year,
   day,
   start_time,
   end_time,
   start_date,
   end_date,
-  nr_times,
-  school_id,
 }: {
   name: string;
   level: string;

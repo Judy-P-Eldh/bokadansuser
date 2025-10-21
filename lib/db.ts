@@ -12,7 +12,7 @@ export async function getSchools() {
 }
 
 export async function getCourseName(course: string) {
-  let { data: courses, error } = await supabase.from("courses").select("name");
+  const { data: courses, error } = await supabase.from("courses").select("name");
 
   if (error) {
     throw error;
@@ -24,7 +24,7 @@ export async function getCourseName(course: string) {
 }
 
 export async function getCourseNames() {
-  let { data: courses, error } = await supabase
+  const { data: courses, error } = await supabase
     .from("courses")
     .select("id, name, min_birth_year, max_birth_year")
     .order("name");
@@ -119,7 +119,7 @@ export async function getCoursesWithSchool(filters: CourseFilters = {}) {
 }
 
 export async function getCourseSchool() {
-  let query = supabase
+  const query = supabase
     .from("courses")
     .select(`*, schools(*)`, { count: "exact" });
 

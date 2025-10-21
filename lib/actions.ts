@@ -40,11 +40,11 @@ export async function sendContactForm(formData: FormData) {
 
   formData.append("access_key", "fc92888b-c7c3-457e-9dc8-40117efe885d");
 
-  const response = await fetch("https://api.web3forms.com/submit", {
+ await fetch("https://api.web3forms.com/submit", {
     method: "POST",
     body: formData,
   });
-  const data = await response.json();
+  // const data = await response.json();
 
   console.log('Server: Formulär mottaget',{ name, epost, subject, message });
   console.log("Kontaktformulär skickat");
