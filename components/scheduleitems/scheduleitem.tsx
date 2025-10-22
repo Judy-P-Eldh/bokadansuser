@@ -29,14 +29,14 @@ export default function ScheduleItem({
 }) {
   return (
     <table className="flex flex-col border rounded-lg p-4 shadow min-w-[200px] bg-white">
-      <div className="font-semibold text-purple-800 text-lg text-center mb-4">
-        {name} - {level} ({agegroup} år)
-      </div>
       <thead>
+        <tr className="font-semibold text-purple-800 text-lg flex justify-self-center mb-4">
+          {name} - {level} ({agegroup} år)
+        </tr>
         <tr className="grid grid-cols-3 justify-items-start">
           <th className="">Tid</th>
           <th className="">Dag</th>
-          <th className=" ">Datum</th>
+          <th className="">Datum</th>
         </tr>
       </thead>
       <tbody>

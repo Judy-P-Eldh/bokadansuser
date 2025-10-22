@@ -9,6 +9,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
   const [birthYear, setBirthYear] = useState("");
   const [validationError, setValidationError] = useState("");
 
+
   const selectedCourse = courseNames.find((c) => c.id === selectedCourseId);
   const currentYear = new Date().getFullYear();
   const isUnder18 = birthYear ? currentYear - parseInt(birthYear) < 18 : false;
@@ -64,7 +65,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
     if (selectedCourse?.min_birth_year || selectedCourse?.max_birth_year) {
       return birthYear.length === 4 && !isNaN(parseInt(birthYear));
     }
-    return true; //Återkoppling på skickat formulär
+    return true;
   };
 
   return (
