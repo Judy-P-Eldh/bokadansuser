@@ -103,7 +103,6 @@ export default async function Dansstilar() {
                 <ContactCards />
             </div>
             <Footer />
-
         </div>
     );
 }
