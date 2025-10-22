@@ -28,27 +28,56 @@ export default function ScheduleItem({
   school_id: number;
 }) {
   return (
-    <div className="flex flex-col border rounded-lg p-4 shadow min-w-[200px] bg-white">
-      <div className="font-semibold text-purple-800 text-lg mb-2">{name} ({agegroup} år)</div>
-      <div className="flex items-center justify-between gap-3 text-sm">
-        <div className="">{level}</div>
-        <div className="">{day}</div>
-        <div className="">
-          {start_time} - {end_time}
-        </div>
-        <div className="">
-          {start_date} till {end_date}
-        </div>
-
-        <div>
-          <Link
-            href="#register"
-            className="text-purple-600 hover:text-purple-800 font-medium"
-          >
-            Anmäl mig
-          </Link>
-        </div>
+    <table className="flex flex-col border rounded-lg p-4 shadow min-w-[200px] bg-white">
+      <div className="font-semibold text-purple-800 text-lg text-center mb-4">
+        {name} - {level} ({agegroup} år)
       </div>
-    </div>
+      <thead>
+        <tr className="grid grid-cols-3 justify-items-start">
+          <th className="">Tid</th>
+          <th className="">Dag</th>
+          <th className=" ">Datum</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="grid grid-cols-3">
+          <td >{start_time} - {end_time}</td>
+          <td >{day}ar</td>
+          <td ><p>Start: {start_date}</p> <p>Slut: {end_date}</p></td>
+        </tr>
+      </tbody>
+      <Link
+        href="#register"
+        className="text-purple-600 font-medium border border-purple-600 rounded-full hover:bg-purple-600 hover:text-white focus:bg-purple-600 focus:text-white m-4 text-center py-2"
+      >
+        Anmäl mig
+      </Link>
+    </table>
+
+
+    // <div className="flex flex-col border rounded-lg p-4 shadow min-w-[200px] bg-white">
+    //   <div className="font-semibold text-purple-800 text-lg mb-2">
+    //     {name} ({agegroup} år) - {level}
+    //   </div>
+    //   <div className="flex items-center justify-between gap-3 text-sm">
+    //     <div className="text-sm">
+    //       Tid: <p>{start_time} - {end_time}</p>
+    //     </div>
+    //     <div>Dag: <p>{day}ar </p> </div>
+    //     <div className="">Datum:
+    //       <p>{start_date} -- {end_date}</p>
+
+    //     </div>
+
+    //     <div>
+    //       <Link
+    //         href="#register"
+    //         className="text-purple-600 hover:text-purple-800 font-medium"
+    //       >
+    //         Anmäl mig
+    //       </Link>
+    //     </div>
+    //   </div>
+    // </div>
   );
 }
