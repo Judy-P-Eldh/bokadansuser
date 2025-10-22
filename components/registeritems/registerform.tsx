@@ -74,6 +74,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
       action={handleRegisterSubmit}
       className="bg-white text-gray-800 p-6 rounded-lg shadow-lg"
     >
+      <input type="hidden" name="subject" value="Anmälan till danskurs"></input>
       {/* Kursval */}
       <div className="mb-4">
         <label htmlFor="courseName" className="block mb-2 font-medium">

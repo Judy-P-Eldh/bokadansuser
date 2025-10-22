@@ -9,6 +9,7 @@ export async function handleRegisterSubmit(formData: FormData) {
   const studentBirthYear = formData.get("studentBirthYear") as string;
   const parentName = formData.get("parentName") as string;
   const email = formData.get("email") as string;
+  const subject = formData.get("subject") as string;
   //Validering och spara data, skicka mail eller liknande
 
   const birthYear = Number(studentBirthYear);
@@ -20,7 +21,7 @@ export async function handleRegisterSubmit(formData: FormData) {
     email,
   };
 
-  const subject = `Anmälan till kurs: ${course}`;
+ 
   formData.append("subject", subject);
   formData.append("access_key", "fc92888b-c7c3-457e-9dc8-40117efe885d");
 
