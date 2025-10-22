@@ -4,7 +4,6 @@ import Header from "@/components/pagesections/header";
 import Hero2 from "@/components/pagesections/hero2";
 import { DanceStyle } from "@/lib/data/interfaces";
 import { getDanceStyles } from "@/lib/db";
-import { Circle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,8 +14,6 @@ export default async function Dansstilar() {
         <div className="h-dvh">
             <Header />
             <Hero2 />
-
-
             {dancestyles?.map((style: DanceStyle) => (
                 <section key={style.id} className={`py-16 odd:bg-white even:bg-gray-100`}>
                     {style.id % 2 === 0 ? (

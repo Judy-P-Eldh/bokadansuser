@@ -64,7 +64,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
     if (selectedCourse?.min_birth_year || selectedCourse?.max_birth_year) {
       return birthYear.length === 4 && !isNaN(parseInt(birthYear));
     }
-    return true;
+    return true; //Återkoppling på skickat formulär
   };
 
   return (

@@ -174,7 +174,7 @@ export default function Filter({ filterOptions }: FilterProps) {
         <button
           type="submit"
           disabled={isPending}
-          className="w-full bg-purple-800 text-white py-2 rounded-full hover:bg-purple-700 disabled:opacity-50"
+          className="w-full bg-purple-800 text-white py-2 rounded-full  hover:bg-white hover:text-purple-800 hover:outline hover:outline-purple-800 focus:outline-purple-800 focus:bg-white focus:text-purple-800 disabled:opacity-50"
         >
           {isPending ? "Filtrerar..." : "Filtrera"}
         </button>
@@ -182,7 +182,7 @@ export default function Filter({ filterOptions }: FilterProps) {
           type="button"
           onClick={handleReset}
           disabled={isPending}
-          className="w-full bg-gray-500 text-white py-2 rounded-full hover:bg-gray-600 disabled:opacity-50"
+          className="w-full bg-gray-500 text-white py-2 rounded-full hover:bg-gray-800 focus:outline-purple-800 focus:bg-white focus:text-purple-800 disabled:opacity-50"
         >
           Rensa filter
         </button>

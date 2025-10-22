@@ -24,12 +24,12 @@ export default function ClassCard({
   description: string;
   agegroup: string | null;  // Ändrat  
   price: number;
-   featured: boolean | null;  // Ändrat
-    featured_message: string | null;  // Ändrat
-   min_birth_year: number | null;  // Ändrat
+  featured: boolean | null;  // Ändrat
+  featured_message: string | null;  // Ändrat
+  min_birth_year: number | null;  // Ändrat
   max_birth_year: number | null;  // Ändrat
   day: string;
-    start_time: string | null;  // Ändrat
+  start_time: string | null;  // Ändrat
   end_time: string | null;  // Ändrat
   start_date: string;
   end_date: string;
@@ -59,45 +59,47 @@ export default function ClassCard({
 
         <div className="card-description h-30 overflow-y-auto">
           <p className="text-gray-700 overflow-hidden line-clamp-3 text-ellipsis">{description}</p>
-          <Link href="/dansstilar" className="text-purple-600 hover:text-purple-800 font-medium">
+          <Link href="/dansstilar" className="text-purple-600 hover:text-purple-800 focus:outline-purple-800 font-medium">
             Läs mer om {name} →
           </Link>
         </div>
 
-        <div className="card-facts space-y-2">
 
-          <div className="flex justify-between border-b-2">
-            <p className="text-gray-700 w-1.5">Start:</p>
-            <p className="">{start_date}</p>
-          </div>
+        <table className="card-facts space-y-2">
+          <tbody>
+            <tr className="flex justify-between border-b-2">
+              <td className="text-gray-700 w-1.5">Start:</td>
+              <td className="">{start_date}</td>
+            </tr>
 
-          <div className="flex gap-4 justify-between border-b-2">
-            <p className="text-gray-700 w-1.5">Slut:</p>
-            <p className="">{end_date}</p>
-          </div>
+            <tr className="flex gap-4 justify-between border-b-2">
+              <td className="text-gray-700 w-1.5">Slut:</td>
+              <td className="">{end_date}</td>
+            </tr>
 
-          <div className="flex gap-4 justify-between border-b-2">
-            <p className="text-gray-700 w-1.5">Pris:</p>
-            <p>{price} kr</p>
-          </div>
+            <tr className="flex gap-4 justify-between border-b-2">
+              <td className="text-gray-700 w-1.5">Pris:</td>
+              <td>{price} kr</td>
+            </tr>
 
-          <div className="flex justify-between border-b-2">
-            <p className="text-gray-700">Skola:</p>
-            <p className="">{school}</p>
-          </div>
+            <tr className="flex justify-between border-b-2">
+              <td className="text-gray-700">Skola:</td>
+              <td className="">{school}</td>
+            </tr>
 
-          <div className="flex justify-between border-b-2">
-            <p className="text-gray-700">Ålder:</p>
-            <p>{agegroup} år</p>
-          </div>
-          {min_birth_year &&
-            <div className="flex justify-between border-b-2">
-              <p className={`text-purple-900 font-medium`}>
-                Födda:</p>
-              <p className="text-purple-900 font-medium">{min_birth_year} -{max_birth_year}</p>
-            </div>
-          }
-        </div>
+            <tr className="flex justify-between border-b-2">
+              <td className="text-gray-700">Ålder:</td>
+              <td>{agegroup} år</td>
+            </tr>
+            {min_birth_year &&
+              <tr className="flex justify-between border-b-2">
+                <td className={`text-purple-900 font-medium`}>
+                  Födda:</td>
+                <td className="text-purple-900 font-medium">{min_birth_year} -{max_birth_year}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
 
         <div className="card-button text-center flex items-end">
           <RegisterButton />
