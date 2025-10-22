@@ -32,16 +32,17 @@ export default function TableItem({
     <tr className="border-b border-gray-200">
       <td className="py-4 px-4">{name}</td>
        <td className="py-4 px-4">{level}</td>
-      <td className="py-4 px-4">{agegroup}</td>
-      <td className="py-4 px-4">{day}</td>
+      <td className="py-4 px-4">{agegroup} år</td>
+      <td className="py-4 px-4">{day}ar</td>
       <td className="py-4 px-4">
         {start_time} - {end_time}
       </td>
       <td className="py-4 px-4">
-        {start_date} till {end_date}
+        <p>Start: {start_date}</p> 
+        <p>Slut: {end_date}</p>
       </td>
 
-      <td className="py-4 px-4">{price}</td>
+      <td className="py-4 px-4">{price} kr</td>
       <td className="py-4 px-4">
         <Link
           href="#register"
