@@ -28,7 +28,7 @@ export async function handleRegisterSubmit(formData: FormData) {
     method: "POST",
     body: formData,
   });
-  redirect("/");
+  redirect("/tack");
   // const data = await response.json();
   // console.log(registerFormEntry);
   // console.log(data.course);
