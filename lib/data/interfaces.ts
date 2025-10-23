@@ -69,6 +69,9 @@ export interface RegisterFormEntry {
   email: string;
   course: string;
   parentName: string;
+  subject: string;
+  key: string;
+  accessNumber: string;
 }
 
 export interface FormParams {
