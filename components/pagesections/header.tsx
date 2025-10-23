@@ -15,15 +15,15 @@ export default function Header() {
           <div className="flex gap-3 items-center">
             <Link href={"/"}>
               <Image
-                className="dark:invert"
-                src="/logga.png"
+                className=""
+                src="/BokaDansLogga.png"
                 alt="logga"
                 width={100}
                 height={100}
               />
             </Link>
             <Link href={"/"}>
-              <h1 className="font-nunito-sans text-xl font-bold text-purple-800">
+              <h1 className="font-nunito-sans text-3xl font-bold text-purple-800">
                 Boka Danskurser
               </h1>
             </Link>
