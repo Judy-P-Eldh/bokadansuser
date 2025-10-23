@@ -1,6 +1,6 @@
 "use client";
 
-import { handleRegisterSubmit, registerSubmit } from "@/lib/actions";
+import { handleRegisterSubmit } from "@/lib/actions";
 import Form from "next/form";
 import { useFormStatus } from "react-dom";
 
