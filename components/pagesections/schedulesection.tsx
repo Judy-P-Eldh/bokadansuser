@@ -18,7 +18,7 @@ export default async function ScheduldeSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-purple-800 mb-4">Schema</h2>
-           <p className="text-gray-700 max-w-2xl mx-auto">Hitta rätt kurs för dig.</p>
+          <p className="text-gray-700 max-w-2xl mx-auto">Hitta rätt kurs för dig.</p>
         </div>
 
         {/* Tabellvisning för medium och större skärmar */}
@@ -87,16 +87,22 @@ export default async function ScheduldeSection() {
           ))}
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-gray-700 mb-4">
-            Hittar du inte kursen du söker? Hör av dig.
-          </p>
-          <Link
-            href="/#contact"
-            className="text-purple-600 hover:text-purple-800 font-medium"
-          >
-            Kontakt →
-          </Link>
+        <div className="mt-8 text-center grid">
+            <Link
+              href="/kurser"
+              className="text-purple-600 font-medium mb-4 border border-purple-600 rounded-full p-2 hover:text-white  hover:bg-purple-600"
+            >
+              Sök bland alla kurser
+            </Link>
+            <p className="text-gray-700 mb-4">
+              Hittar du inte kursen du söker? Hör av dig.
+            </p>
+            <Link
+              href="/#contact"
+              className="text-purple-600 hover:text-purple-800 font-medium w-full"
+            >
+              Kontakt →
+            </Link>
         </div>
       </div>
     </section>
