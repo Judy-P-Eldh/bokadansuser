@@ -13,6 +13,7 @@ export default async function RegisterInfo() {
                 <p>Dina uppgifter sparas i enlighet med GDPR. Vi delar inga uppgifter med tredje part.</p>
                 <p>De uppgifter vi samlar in sparas endast för att vi ska kunna genomföra våra åtaganden gentemot dig som kund.</p>
             </div>
+            
             <RegisterForm courseNames={courseNames} />
         </section>
     );
