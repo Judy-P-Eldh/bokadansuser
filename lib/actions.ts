@@ -1,29 +1,6 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { RegisterFormEntry } from "./data/interfaces";
-
-// export async function registerSubmit() {
-// const myname = formData.get("myName") as string;
-//  console.log("RegisterSubmit körs.");
-
-//   formData.append("access_key", "fc92888b-c7c3-457e-9dc8-40117efe885d");
-
-//  const res = await fetch("https://api.web3forms.com/submit", {
-//     method: "POST",
-//     body: JSON.stringify(formData),
-//   });
-
-//    const data = await res.json();
-//   console.log(data);
-//   return data;
-// }
-
-export async function registerSubmit(formData: FormData) {
-  const myname = formData.get("myname") as string;
-
-  return myname;
-}
 
 export async function handleRegisterSubmit(formData: FormData) {
   // Extrahera värden
@@ -104,12 +81,7 @@ export async function handleRegisterSubmit(formData: FormData) {
     message: json.message || "Något gick fel vid skickande av formulär"
   };
 
-  // formData.append("subject", subject);
-  // formData.append("access_key", "fc92888b-c7c3-457e-9dc8-40117efe885d");
-  // const object = Object.fromEntries(formData);
-
-
-  // {
+  // { Svaret:
   //    "statusCode":200,
   //    "success":true,
   //    "body":{
@@ -119,25 +91,6 @@ export async function handleRegisterSubmit(formData: FormData) {
   //       "message":"Email sent successfully!"
   //    }
   // }
-
-
-  // const res = await fetch("https://api.web3forms.com/submit", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     Accept: "application/json",
-  //   },
-  //   body: JSON.stringify(object),
-  // });
-
-  // const json = await res.json();
-  // console.log(json);
-
-  // if (json.success) {
-  //   redirect("/tack");
-  // }
-
-  // return json;
 }
 
 export async function sendContactForm(formData: FormData) {
