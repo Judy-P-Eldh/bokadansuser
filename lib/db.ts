@@ -83,7 +83,8 @@ export async function getCoursesWithSchool(filters: CourseFilters = {}) {
 
   let query = supabase
     .from("courses")
-    .select(`*, schools(id, name)`, { count: "exact" });
+    .select(`*, schools(id, name)`, { count: "exact" })
+     .order('name', { ascending: true });
 
   if (filters.days && filters.days.length > 0) {
     query = query.in("day", filters.days);
