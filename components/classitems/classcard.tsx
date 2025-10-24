@@ -3,6 +3,7 @@ import Link from "next/link";
 import RegisterButton from "../registeritems/registerbutton";
 
 export default function ClassCard({
+  id,
   name,
   description,
   level,
@@ -19,6 +20,7 @@ export default function ClassCard({
   end_date,
   school,
 }: {
+  id:number;
   name: string;
   level: string;
   description: string;

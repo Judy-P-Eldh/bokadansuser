@@ -51,7 +51,7 @@ export interface Course {
   min_birth_year: number | null;
   max_birth_year: number | null;
   school_id: number;
-   schools: { // Ändrat från school: string till schools: object
+   schools: { 
     id: number;
     name: string;
   } | null;

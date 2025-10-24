@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export default function ScheduleItem({
+  id,
   name,
   level,
   agegroup,
@@ -10,6 +11,7 @@ export default function ScheduleItem({
   start_date,
   end_date,
 }: {
+  id: number
   name: string;
   level: string;
   description: string;
