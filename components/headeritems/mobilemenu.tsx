@@ -20,6 +20,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
                 <Link href="/#schedule" className="text-gray-700 py-2 border-b border-gray-200">Schema</Link>
                 <Link href="/kurser" className="text-gray-700 py-2 border-b border-gray-200">Sök kurser</Link>
                 <Link href="/dansstilar" className="text-gray-700 py-2 border-b border-gray-200">Dansstilar</Link>
+                <Link href="/larare" className="text-gray-700 py-2 border-b border-gray-200">Lärare</Link>
                 <Link href="/#register" className="text-gray-700 py-2 border-b border-gray-200">Anmälan</Link>
                 <Link href="/#contact" className="text-gray-700 py-2 border-b border-gray-200">Kontakt</Link>
                 <div className="py-4">

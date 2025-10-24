@@ -1,10 +1,11 @@
 import { Circle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
     //About section
-    <section className="py-16 bg-gray-100">
+    <section id="about" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
@@ -35,8 +36,10 @@ export default function About() {
                 priority
               />
               <div className="absolute bottom-6 right-6 bg-purple-600 text-white p-4 rounded-lg shadow-lg hidden md:block">
+               <Link href={"/larare"}>
                 <p className="text-xl font-bold">15+</p>
                 <p>År i branschden</p>
+                </Link>
               </div>
             </div>
           </div>

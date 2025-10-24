@@ -36,6 +36,7 @@ export default function Footer() {
                  <li><Link href="/#schedule" className="hover:text-purple-300">Schema</Link></li>
                 <li><Link href="/kurser" className="hover:text-purple-300">Kurser</Link></li>
                 <li><Link href="/dansstilar" className="hover:text-purple-300">Dansstilar</Link></li>
+                <li><Link href="/larare" className="hover:text-purple-300">Lärare</Link></li>
                 <li><Link href="/#register" className="hover:text-purple-300">Anmälan</Link></li>
                 <li><Link href="/#contact" className="hover:text-purple-300">Kontakt</Link></li>
               </ul>
