@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bokning för svenska dansskolor
+Ett projekt med syfte att hjälpa svenska dansskolor att ta emot bokningar. Webbappen är anpassad för småskaliga verksamheter med möjlighet att:
+- visa upp danskurser från allla dansskolor kopplade till verksamheten
+- ta emot bokningar med inkluderad ålderskontroll baserat på kurskraven
 
-## Getting Started
+---
 
-First, run the development server:
+## Innehåll
+- [Om projektet](#Om-projektet) 
+- [Funktionalitet](#Funktionalitet)
+- [Tech](#Tech)
+- [Användning](#Användning)
+- [Arbetssätt](#Arbetssätt)
+- [Sprintplan](#Sprintplan)
+- [Lärdomar och färdigheter](#Lärdomar-och-färdigheter)
+- [Svårigheter](#Svårigheter)
+- [Tillgänglighet](#Tillgänglighet)
+- [Framtida möjligheter](#Framtida-möjligheter)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+--- 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Om projektet
+Detta är ett enskilt slutprojetkt där jag använder kunskaper inom Next.js, Typescript, Tailwind
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Funktionalitet
+- Hero med CTA 
+- Presentation av verksamheten
+- Schema
+- Kursanmälan
+- Kontaktinfo, kontaktformulär och karta
+- Vanliga frågor
+- Footer med länkar till sociala medier, menylänkar och kontaktuppgifter
+- Filtreringsmöjlighet
+- Informaiton om olika dansstilar
+- Presentation av lärare
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Tech
+- [Next.js v.15 (App Router)](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Supabase](https://supabase.com/)
+- [WAVE](https://wave.webaim.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [Lucide React](https://lucide.dev/guide/packages/lucide-react)
+- [React Hot Toast](https://react-hot-toast.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Användning
+* Hemsida -> hero med CTA, presentation av verksamheten, schema, kursanmälan, kontaktinfo, kontaktformulär, karta och vanliga frågor
+* Sida med texter om olika dansstilar
+* Sida med presentation av lärare
+* Sida med filtrering för att hitta danskurser
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Arbetssätt
+* Enskilt arbete med inkludering i mindre grupp för att arbeta med SCRUM
+* Trello för sprintplanering
+* Feature branches
+* PR
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Sprintplan
+
+### Srint 1 - Planering och uppstart
+* Tog beslut kring databashantering
+* Skapade Next.js-projektet
+* Skapade mappstruktur
+* Skapade backlog i Trello
+* Skapade grundutseendet baserat på tidigare arbete
+* Lade in ny och befintlig exempeldata i databasen
+
+### Srint 2 - Filterfunktionalitet 
+* Kopplade ihop databasen med Next.js
+* Skapade filterfunktionalitet
+* Lade till informationssida om dansstilar
+* Lade till funktionalitet för kontaktformulär
+* Kontrollera tillgänglighetsanpassning
+
+### Sprint 3 - Färdigställa MVP
+* Justerade mappstruktur
+* Uppdatera tillgänglighetsanpassning
+* Publicerade till Vercel
+* Tog in feedback från utomstående som testat manuellt
+* Färdigställde uteseende och aktuell info för kurskort
+
+### Spring 4 - Avslt och redovisning (extra kort)
+* Uppdatering av responsivitet och  tillgänglighetsanpassning
+* Förberedde och genomförde redovsining
+* README.txt
+
+---
+
+## Lärdomar och färdigheter
+* Client Actions
+* Filtrering
+* Supabase
+- Responsivitet
+- Tillänglighetsanpassning
+- Databashantering
+- Client components
+- Server components
+- Server Actions
+
+
+### Svårigheter
+* Tidsbegränsning, vilket medförde att administrationsdel med inlogg inte hanns med.
+* Att alltid lyckas arbeta enligt de nyaste principerna, då dokumentation ibland är bristfällig.
+* Då koppling med Prisam inte lyckades, valde jag bort Prisma och valde att använda enbart Supabase.
+
+---
+
+## Tillgänglighet
+* Wave
+* Lighthouse
+* Manuell testning av utomstående
+* Screen reader
+
+---
+
+## Framtida möjligheter
+En önskad fortsttning på detta projekt skulle vara att lägga till en administrationsdel, så att de anmälningar som kommer in lätt kan hanteras via ett inlogg.
