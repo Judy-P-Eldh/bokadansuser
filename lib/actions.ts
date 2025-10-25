@@ -8,6 +8,7 @@ export async function handleRegisterSubmit(formData: FormData) {
   const studentName = formData.get("studentName") as string;
   const studentBirthYear = formData.get("studentBirthYear") as string;
   const parentName = formData.get("parentName") as string | null;
+  const parentPhone = formData.get("parentPhone") as string;
   const email = formData.get("email") as string;
   const subject = formData.get("subject") as string;
 
@@ -27,11 +28,16 @@ export async function handleRegisterSubmit(formData: FormData) {
   if (!email || !emailRegex.test(email)) {
     errors.push("Ogiltig e-postadress");
   }
+  // Validera telefonnummer
+  const phoneRegex = /^\d{10}$/;
+  if (!parentPhone || !phoneRegex.test(parentPhone)) {
+    errors.push("Ogiltigt telefonnummer");
+  }
   // Validera födelseår om det finns
   if (studentBirthYear) {
     const yearNum = parseInt(studentBirthYear);
     const currentYear = new Date().getFullYear();
-    
+
     if (isNaN(yearNum) || yearNum < 1900 || yearNum > currentYear) {
       errors.push("Ogiltigt födelseår");
     }
@@ -46,7 +52,7 @@ export async function handleRegisterSubmit(formData: FormData) {
   if (errors.length > 0) {
     return {
       success: false,
-      message: errors.join(", ")
+      message: errors.join(", "),
     };
   }
   // Förbered data för Web3Forms
@@ -57,10 +63,11 @@ export async function handleRegisterSubmit(formData: FormData) {
     studentName: studentName,
     studentBirthYear: studentBirthYear,
     email: email,
-    ...(parentName && { parentName: parentName }) // Inkludera bara om det finns
+    ...(parentName && { parentName: parentName }), // Inkludera bara om det finns
+    ...(parentPhone && { parentPhone: parentPhone }), // Inkludera bara om det finns
   };
 
-   const res = await fetch("https://api.web3forms.com/submit", {
+  const res = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -78,7 +85,7 @@ export async function handleRegisterSubmit(formData: FormData) {
 
   return {
     success: false,
-    message: json.message || "Något gick fel vid skickande av formulär"
+    message: json.message || "Något gick fel vid skickande av formulär",
   };
 
   // { Svaret:

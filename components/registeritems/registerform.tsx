@@ -26,7 +26,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
       return;
     }
 
-     // Kolla att året är rimligt (inte för gammalt eller i framtiden)
+    // Kolla att året är rimligt (inte för gammalt eller i framtiden)
     if (yearNum < 1900 || yearNum > currentYear) {
       setValidationError("Vänligen ange ett giltigt födelseår");
       return;
@@ -54,7 +54,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
     }
   };
 
-   const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const courseId = e.target.value ? parseInt(e.target.value) : null;
     setSelectedCourseId(courseId);
     setValidationError("");
@@ -70,19 +70,19 @@ export default function RegisterForm({ courseNames }: FormParams) {
     return true;
   };
 
- const clientAction = async (formData: FormData) => {
+  const clientAction = async (formData: FormData) => {
     // Ta bort parentName om eleven är över 18
     if (!isUnder18) {
       formData.delete("parentName");
     }
 
-     // Ersätt kurs-id med kursnamnet
+    // Ersätt kurs-id med kursnamnet
     if (selectedCourse) {
       formData.set("courseName", selectedCourse.name);
     }
-    
+
     const svar = await handleRegisterSubmit(formData);
-    
+
     if (svar.success) {
       toast.success("Kursanmälan skickad!");
     } else {
@@ -98,7 +98,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
     >
       <input type="hidden" name="subject" value="Anmälan till danskurs"></input>
 
-       {/* Kursval */}
+      {/* Kursval */}
       <div className="mb-4">
         <label htmlFor="courseName" className="block mb-2 font-medium">
           Välj kurs <span className="text-red-600">*</span>
@@ -139,7 +139,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
         />
       </div>
 
-      
+
       {/* Födelseår */}
       <div className="mb-4">
         <label htmlFor="studentBirthYear" className="block mb-2 font-medium">
@@ -158,9 +158,8 @@ export default function RegisterForm({ courseNames }: FormParams) {
           pattern="[0-9]{4}"
           maxLength={4}
           required={!!(selectedCourse?.min_birth_year || selectedCourse?.max_birth_year)}
-          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 ${
-            validationError ? "border-red-500" : "border-gray-300"
-          }`}
+          className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 ${validationError ? "border-red-500" : "border-gray-300"
+            }`}
         />
         {validationError && (
           <p className="text-red-600 text-sm mt-1">{validationError}</p>
@@ -175,21 +174,39 @@ export default function RegisterForm({ courseNames }: FormParams) {
           )}
       </div>
 
-       {/* Visa förälders namn endast om eleven är under 18 */}
+      {/* Visa förälders namn endast om eleven är under 18 */}
       {isUnder18 && (
-        <div className="mb-4">
-          <label htmlFor="parentName" className="block mb-2 font-medium">
-            Förälders för- och efternamn <span className="text-red-600">*</span>
-          </label>
-          <input
-            type="text"
-            id="parentName"
-            name="parentName"
-            required
-            minLength={2}
-            placeholder="Förälders för- och efternamn"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-          />
+        <div>
+          <div className="mb-4">
+            <label htmlFor="parentName" className="block mb-2 font-medium">
+              Förälders för- och efternamn <span className="text-red-600">*</span>
+            </label>
+            <input
+              type="text"
+              id="parentName"
+              name="parentName"
+              required
+              minLength={2}
+              placeholder="Förälders för- och efternamn"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="parentPhone" className="block mb-2 font-medium">
+              Förälders telefonnummer <span className="text-red-600">*</span>
+            </label>
+            <input
+              type="text"
+              id="parentPhone"
+              name="parentPhone"
+              required
+              pattern="[0-9]{10}"
+              minLength={8}
+              maxLength={12}
+              placeholder="0701234567"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+            />
+          </div>
         </div>
       )}
 
