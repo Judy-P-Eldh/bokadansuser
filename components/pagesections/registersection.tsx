@@ -24,11 +24,6 @@ export default function RegisterSection() {
                   <span>Regelbundna uppträdanden</span>
                 </div>
               </div>
-              <p className="text-md font-bold my-6">Till dig som testar denna webbsida:</p>
-              <p className="text-md mb-4">{`- Om du skickar formuläret, skriv gärna "Test" någonstans för att undvika några missförstånd.`}</p>
-              <p className="text-md mb-4">{`- Danskurserna som visas är bara exempel och går inte att anmäla sig till på riktigt.`}</p>
-              <p className="text-md mb-4">{`- Vill du skicka kommentarer eller synpunkter går det bra att använda kontaktformuläret under "Mejla oss", alternativt höra av dig till mig personligen.
-                Ange gärna om du använder dator, mobil eller surfplatta.`}</p>
             </div>
             <div className="md:w-1/3">
               <RegisterInfo />
