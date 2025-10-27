@@ -22,15 +22,15 @@ export default function ClassCard({
   name: string;
   level: string;
   description: string;
-  agegroup: string | null;  // Ändrat  
+  agegroup: string | null;   
   price: number;
-  featured: boolean | null;  // Ändrat
-  featured_message: string | null;  // Ändrat
-  min_birth_year: number | null;  // Ändrat
-  max_birth_year: number | null;  // Ändrat
+  featured: boolean | null;  
+  featured_message: string | null;  
+  min_birth_year: number | null;  
+  max_birth_year: number | null; 
   day: string;
-  start_time: string | null;  // Ändrat
-  end_time: string | null;  // Ändrat
+  start_time: string | null; 
+  end_time: string | null; 
   start_date: string;
   end_date: string;
   school: string;

@@ -9,7 +9,6 @@ export default function Filter({ filterOptions }: FilterProps) {
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
 
-  // Initiera state från URL params
   const [selectedDays, setSelectedDays] = useState<string[]>(
     searchParams.getAll("days")
   );
@@ -26,7 +25,7 @@ export default function Filter({ filterOptions }: FilterProps) {
     searchParams.getAll("types")
   );
   const [selectedSchools, setSelectedSchools] = useState<string[]>(
-    searchParams.getAll("school_ids") // Ändrat till school_ids
+    searchParams.getAll("school_ids") 
   );
 
   const toggleValue = (

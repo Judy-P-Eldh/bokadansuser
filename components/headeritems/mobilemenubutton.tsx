@@ -9,7 +9,6 @@ export default function MobileMenuButton({ isOpen, setIsOpen }: MobileMenuButton
             <button
                 id="menu-btn"
                 onClick={() => {
-                    // console.log("Knappen klickad!");
                     setIsOpen(!isOpen);
                 }}
                 className="text-gray-700"

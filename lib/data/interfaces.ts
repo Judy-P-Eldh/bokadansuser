@@ -14,7 +14,7 @@ export interface CourseFilters {
   ages?: string[];
   styles?: string[];
   types?: string[];
-  school_ids?: string[]; // Ändrat från schools till school_ids
+  school_ids?: string[];
 }
 
 export interface FilterOption {
@@ -31,9 +31,9 @@ export interface FilterOptions {
   schools: FilterOption[];
 }
 
-export interface DrawerFilterProps {
-  filterOptions: FilterOptions;
-}
+// export interface DrawerFilterProps {
+//   filterOptions: FilterOptions;
+// }
 
 export interface FilterProps {
   filterOptions: FilterOptions;

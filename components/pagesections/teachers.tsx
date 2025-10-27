@@ -23,10 +23,6 @@ export default function Teachers() {
                             <h3 className="text-xl font-bold text-purple-800 mb-1">Sarah Johnson</h3>
                             <p className="text-purple-600 mb-3">Ballet</p>
                             <p className="text-gray-700 mb-4">Former principal dancer with 15 years of teaching experience. Specializes in Vaganova method.</p>
-                            {/* <div className="flex space-x-3">
-                                <Link href="#" className="text-purple-600 hover:text-purple-800"><i className="fab fa-instagram"></i></Link>
-                                <Link href="#" className="text-purple-600 hover:text-purple-800"><i className="fab fa-linkedin"></i></Link>
-                            </div> */}
                         </div>
                     </div>
                     {/* <!-- Teacher 2 --> */}
@@ -43,16 +39,12 @@ export default function Teachers() {
                             <h3 className="text-xl font-bold text-purple-800 mb-1">James Wilson</h3>
                             <p className="text-purple-600 mb-3">Hip Hop Specialist</p>
                             <p className="text-gray-700 mb-4">Professional hip hop dancer with competition experience. Focuses on foundation and freestyle.</p>
-                            {/* <div className="flex space-x-3">
-                                <Link href="#" className="text-purple-600 hover:text-purple-800"><i className="fab fa-instagram"></i></Link>
-                                <Link href="#" className="text-purple-600 hover:text-purple-800"><i className="fab fa-youtube"></i></Link>
-                            </div> */}
                         </div>
                     </div>
 
                     {/* <!-- Teacher 3 --> */}
                     <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                         <Image
+                        <Image
                             className="dark:invert w-full h-64 object-cover"
                             src="/female2.jpeg"
                             alt="Porträtt av danslärare."
@@ -64,15 +56,11 @@ export default function Teachers() {
                             <h3 className="text-xl font-bold text-purple-800 mb-1">Emily Chen</h3>
                             <p className="text-purple-600 mb-3">Jazz & Contemporary</p>
                             <p className="text-gray-700 mb-4">Broadway performer turned teacher. Passionate about storytelling through movement.</p>
-                            {/* <div className="flex space-x-3">
-                                <Link href="#" className="text-purple-600 hover:text-purple-800"><i className="fab fa-instagram"></i></Link>
-                                <Link href="#" className="text-purple-600 hover:text-purple-800"><i className="fab fa-twitter"></i></Link>
-                            </div> */}
                         </div>
                     </div>
                     {/*  <!-- Teacher 4 --> */}
                     <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                         <Image
+                        <Image
                             className="dark:invert w-full h-64 object-cover"
                             src="/male3.jpeg"
                             alt="Porträtt av danslärare."
@@ -84,10 +72,6 @@ export default function Teachers() {
                             <h3 className="text-xl font-bold text-purple-800 mb-1">David Martinez</h3>
                             <p className="text-purple-600 mb-3">Tap & Musical Theater</p>
                             <p className="text-gray-700 mb-4">Tony-nominated performer with extensive teaching credentials in tap and theater dance.</p>
-                            {/* <div className="flex space-x-3">
-                                <Link href="#" className="text-purple-600 hover:text-purple-800">Instagram</Link>
-                                <Link href="#" className="text-purple-600 hover:text-purple-800">LinkedIn</Link>
-                            </div> */}
                         </div>
                     </div>
                 </div>

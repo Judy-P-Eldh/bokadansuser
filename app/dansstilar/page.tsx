@@ -31,16 +31,6 @@ export default async function Dansstilar() {
                                             <Link href="/#register" className="hover:underline">Till kursanmälan</Link>
                                         </p>
                                     </div>
-                                    {/* <ul className="flex flex-wrap gap-4 mt-4 list-disc">
-                                    <li className="flex items-center">
-                                        <Circle className="fill-purple-700 mr-2" />
-                                        {course.day}
-                                    </li>
-                                    <li className="flex items-center">
-                                        <Circle className="fill-purple-700 mr-2" />
-                                        Dansmix 2 - Tisdagar kl. 17:50
-                                    </li>
-                                </ul> */}
                                 </div>
                                 <div className="md:w-1/2">
                                     <div className="relative">
@@ -85,12 +75,6 @@ export default async function Dansstilar() {
                                             <Link href="/#register" className="hover:underline">Till kursanmälan</Link>
                                         </p>
                                     </div>
-                                    {/* <ul className="flex flex-wrap gap-4 list-disc">
-                                        <li className="flex items-center">
-                                            <Circle className="fill-purple-700 mr-2" />
-                                            Tisdagar kl. 18:30
-                                        </li>
-                                    </ul> */}
                                 </div>
                             </div>
                         </div>

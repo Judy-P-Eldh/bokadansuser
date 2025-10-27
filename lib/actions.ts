@@ -80,7 +80,7 @@ export async function handleRegisterSubmit(formData: FormData) {
   console.log(json);
 
   if (json.success) {
-    redirect("/tack"); // redirect kastar ett NEXT_REDIRECT error, vilket är OK
+    redirect("/tack");
   }
 
   return {
@@ -88,16 +88,6 @@ export async function handleRegisterSubmit(formData: FormData) {
     message: json.message || "Något gick fel vid skickande av formulär",
   };
 
-  // { Svaret:
-  //    "statusCode":200,
-  //    "success":true,
-  //    "body":{
-  //       "data":{
-  //         [USER SUBMITTED DATA]
-  //       },
-  //       "message":"Email sent successfully!"
-  //    }
-  // }
 }
 
 export async function sendContactForm(formData: FormData) {
@@ -115,8 +105,4 @@ export async function sendContactForm(formData: FormData) {
     method: "POST",
     body: formData,
   });
-  // const data = await response.json();
-
-  // console.log('Server: Formulär mottaget',{ name, epost, subject, message });
-  // console.log("Kontaktformulär skickat");
 }

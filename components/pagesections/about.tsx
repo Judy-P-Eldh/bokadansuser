@@ -17,7 +17,6 @@ export default function About() {
               Anmäl dig till kurser som Show/Jazzdans, Streetdance, Modern dans,
               Balett och Barndans.
             </p>
-            {/* <p className="text-gray-700 mb-6">Här finns dansklasser för barn från 6 år.</p> */}
             <ul className="flex flex-wrap gap-4 list-disc">
               <li className="flex items-center">
                 <Circle className="fill-purple-700 mr-2" />

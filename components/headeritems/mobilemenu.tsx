@@ -14,7 +14,6 @@ export default function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
             id="mobile-menu"
             className={`bg-white p-4 md:hidden fixed top-16 left-0 right-0 z-50 shadow-md ${isOpen ? "block" : "hidden"}`}
         >
-            {/* <p>Mobilmeny visas här!</p> */}
             <div className="px-4 py-2 flex flex-col space-y-3">
                 <Link href="/" className="text-purple-600 font-medium py-2 border-b border-gray-200">Hem</Link>
                 <Link href="/#schedule" className="text-gray-700 py-2 border-b border-gray-200">Schema</Link>

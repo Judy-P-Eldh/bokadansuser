@@ -1,4 +1,4 @@
-import { ClockIcon, MailIcon, PhoneIcon } from "lucide-react";
+import { ClockIcon, DramaIcon, Footprints, MailIcon, PhoneIcon, Star } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,20 +11,22 @@ export default function Footer() {
           {/* <!-- Footer Column 1 --> */}
           <section>
             <div className="flex items-center mb-4">
-              {/* <DramaIcon className="text-3xl mr-2"/> */}
               <span className="text-xl font-bold">Boka Danskurser</span>
             </div>
-            <div className="mt-4">
-              <Link href="https://www.facebook.com/people/Biz-Advancers/61568445538481/" className="hover:text-purple-300">Facebook</Link>
-            </div>
-
+            <p>Tillhandahålls av:</p>
             <Image
-              className="dark:invert rounded-full mt-4"
-              src="/logga.png"
-              alt="Logga"
+              className=" mt-4"
+              src="/LoggaBA.png"
+              alt="Biz Advancers Logga"
               width={100}
               height={100}
             />
+            <div className="mt-4">
+              <Link href="https://www.facebook.com/people/Biz-Advancers/61568445538481/" className="hover:text-purple-300">
+              Facebook
+              </Link>
+            </div>
+            
             
           </section>
 

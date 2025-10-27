@@ -3,6 +3,7 @@
 import { handleRegisterSubmit } from "@/lib/actions";
 import Form from "next/form";
 import { useFormStatus } from "react-dom";
+import toast from "react-hot-toast";
 
 function CourseRegisterButton() {
     const { pending } = useFormStatus();
@@ -22,7 +23,7 @@ export default function RegisterClientAction() {
         const svar = await handleRegisterSubmit(formData);
         if (svar.success) {
             console.log(svar.message);
-            // toast(svar.message);
+            toast(svar.message);
         }
     }
     return (

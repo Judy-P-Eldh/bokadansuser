@@ -3,7 +3,6 @@ import { getCourseNames } from "@/lib/db";
 
 export default async function RegisterInfo() {
     const coursresult = await getCourseNames();
-    // Pass the full course objects, not just names
     const courseNames = coursresult ?? [];
 
     return (

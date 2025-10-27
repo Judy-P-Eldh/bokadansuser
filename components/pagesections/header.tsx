@@ -34,7 +34,6 @@ export default function Header() {
 
           {/* <!-- Mobile Menu Button --> */}
           <MobileMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
-          {/* <p>{isOpen ? "Menyn är öppen" : "Menyn är stängd"}</p> */}
         </div>
 
         {/* <!-- Mobile Menu --> */}

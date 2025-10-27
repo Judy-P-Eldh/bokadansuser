@@ -34,7 +34,6 @@ export async function getCourseName(course: string) {
 
   const apporvedCourse = courses?.find((c) => c.name === course);
   return apporvedCourse;
-  // console.log('Kurs från db: ', apporvedCourse);
 }
 
 export async function getCourseNames() {
@@ -47,7 +46,6 @@ export async function getCourseNames() {
     console.error("Error fetching course names:", error);
     return null;
   }
-  //  console.log('Fetched courses:', courses); // Add this to debug
 
   return courses;
 }
@@ -79,7 +77,6 @@ function stripSeconds(tid: string) {
 }
 
 export async function getCoursesWithSchool(filters: CourseFilters = {}) {
-  // console.log("Filters mottagna:", filters);
 
   let query = supabase
     .from("courses")
@@ -95,7 +92,6 @@ export async function getCoursesWithSchool(filters: CourseFilters = {}) {
   }
 
   if (filters.ages && filters.ages.length > 0) {
-    // console.log("Filtrerar på age:", filters.ages);
     query = query.in("agegroup", filters.ages);
   }
 
@@ -114,9 +110,6 @@ export async function getCoursesWithSchool(filters: CourseFilters = {}) {
 }
 
   const { data, count, error } = await query;
-  // console.log("Data från db:", data);
-  // console.log("Count:", count);
-
   if (error) {
     throw error;
   }
@@ -139,8 +132,6 @@ export async function getCourseSchool() {
     .select(`*, schools(*)`, { count: "exact" });
 
   const { data, count, error } = await query;
-  // console.log("Data från db:", data);
-  // console.log("Count:", count);
   if (data) {
     data.forEach((course) => {
       if (course.start_time || course.end_time) {
