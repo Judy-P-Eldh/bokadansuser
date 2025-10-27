@@ -1,6 +1,7 @@
 # Bokning för svenska dansskolor
 
-Ett webbaserat bokningssystem som hjälper svenska dansskolor att visa sina kurser och ta emot bokningar med automatisk ålderskontroll.  
+Ett webbaserat bokningssystem som hjälper svenska dansskolor att visa sina kurser och ta emot bokningar med automatisk ålderskontroll.
+
 Projektet är utvecklat i **Next.js 15 (App Router)** och riktar sig till småskaliga verksamheter med behov av ett enkelt och tillgängligt bokningsflöde.
 
 ---
