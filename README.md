@@ -1,14 +1,14 @@
 # Bokning för svenska dansskolor
-Ett projekt med syfte att hjälpa svenska dansskolor att ta emot bokningar. Webbappen är anpassad för småskaliga verksamheter med möjlighet att:
-- visa upp danskurser från allla dansskolor kopplade till verksamheten
-- ta emot bokningar med inkluderad ålderskontroll baserat på kurskraven
+
+Ett webbaserat bokningssystem som hjälper svenska dansskolor att visa sina kurser och ta emot bokningar med automatisk ålderskontroll.  
+Projektet är utvecklat i **Next.js 15 (App Router)** och riktar sig till småskaliga verksamheter med behov av ett enkelt och tillgängligt bokningsflöde.
 
 ---
 
 ## Innehåll
 - [Om projektet](#Om-projektet) 
 - [Funktionalitet](#Funktionalitet)
-- [Tech](#Tech)
+- [Teknik](#Teknik)
 - [Användning](#Användning)
 - [Arbetssätt](#Arbetssätt)
 - [Sprintplan](#Sprintplan)
@@ -20,108 +20,112 @@ Ett projekt med syfte att hjälpa svenska dansskolor att ta emot bokningar. Webb
 --- 
 
 ## Om projektet
-Detta är ett enskilt slutprojetkt där jag använder kunskaper inom Next.js, Typescript, Tailwind
+Detta är ett individuellt slutprojekt som demonstrerar praktisk användning av **Next.js**, **TypeScript**, **Tailwind CSS** och **Supabase**.  
+Syftet är att skapa en tillgänglig och responsiv webbapp där besökare kan:
+- Utforska kurser från flera dansskolor
+- Filtrera utbudet efter ålder, nivå och dansstil
+- Göra kursanmälningar direkt via webbgränssnittet
 
 ---
 
 ## Funktionalitet
-- Hero med CTA 
+- Hero-ekstion med tydlig CTA 
 - Presentation av verksamheten
-- Schema
-- Kursanmälan
+- Schemalista
+- Kurspresentation med filtrering
+- Kursanmälan med ålderskontroll
 - Kontaktinfo, kontaktformulär och karta
 - Vanliga frågor
-- Footer med länkar till sociala medier, menylänkar och kontaktuppgifter
-- Filtreringsmöjlighet
-- Informaiton om olika dansstilar
-- Presentation av lärare
+- Presentation av lärare och dansstilar
+- Footer med menylänkar, sociala medier och kontaktuppgifter
 
 ---
 
-## Tech
-- [Next.js v.15 (App Router)](https://nextjs.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Supabase](https://supabase.com/)
-- [WAVE](https://wave.webaim.org/)
-- [Tailwind](https://tailwindcss.com/)
+## Teknik
+Projektet är byggt med:
+- [Next.js 15 (App Router)](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Supabase](https://supabase.com)
 - [Lucide React](https://lucide.dev/guide/packages/lucide-react)
-- [React Hot Toast](https://react-hot-toast.com/)
-
+- [React Hot Toast](https://react-hot-toast.com)
+- [WAVE](https://wave.webaim.org) för tillgänglighetstestning
+  
 ---
 
 ## Användning
-- Hemsida -> hero med CTA, presentation av verksamheten, schema, kursanmälan, kontaktinfo, kontaktformulär, karta och vanliga frågor
-- Sida med texter om olika dansstilar
-- Sida med presentation av lärare
-- Sida med filtrering för att hitta danskurser
+Webbappen innehåller flera sidor:
+- Start: hero med CTA, presentation av verksamheten, schema, kursanmälan, kontaktinfo, kontaktformulär, karta och vanliga frågor
+- Dansstilar: beskrivning av olika dansstilar
+- Lärarea: presentation av lärare
+- Sök kurser – filtreringsfunktion för att hitta passande kurser
 
 ---
 
 ## Arbetssätt
-- Enskilt arbete med inkludering i mindre grupp för att arbeta med SCRUM
-- Trello för sprintplanering
-- Feature branches
-- PR
+Utvecklingen bedrevs enskilt med **SCRUM-inspirerat arbetssätt**:
+- Planering i Trello
+- Feature branches och PR
+- Iterativ testning och refaktorering
 
 ---
 
 ## Sprintplan
 
-### Srint 1 - Planering och uppstart
-- Tog beslut kring databashantering
-- Skapade Next.js-projektet
-- Skapade mappstruktur
+### Sprint 1 – Planering och uppstart
+- Beslut kring databashantering
+- Skapade projektstruktur
 - Skapade backlog i Trello
-- Skapade grundutseendet baserat på tidigare arbete
+- Skapade grundlayout
 - Lade in ny och befintlig exempeldata i databasen
 
 ### Srint 2 - Filterfunktionalitet 
-- Kopplade ihop databasen med Next.js
-- Skapade filterfunktionalitet
-- Lade till informationssida om dansstilar
-- Lade till funktionalitet för kontaktformulär
+- Koppling mot Supabase 
+- Implementerade filterfunktion 
+- Skapade informationssida om dansstilar
+- Implementerade funktionalitet för kontaktformulär
 - Kontrollera tillgänglighetsanpassning
 
 ### Sprint 3 - Färdigställa MVP
 - Justerade mappstruktur
-- Uppdatera tillgänglighetsanpassning
-- Publicerade till Vercel
-- Tog in feedback från utomstående som testat manuellt
-- Färdigställde uteseende och aktuell info för kurskort
+- Uppdaterade tillgänglighetsanpassning
+- Publicerade på Vercel
+- Testade med externa användare
+- Färdigställde aktuell info design av kurskort
 
 ### Spring 4 - Avslt och redovisning (extra kort)
-- Uppdatering av responsivitet och  tillgänglighetsanpassning
+- Uppdatering av responsivitet
+- Genomförde tillgänglighetsgranskning  
 - Förberedde och genomförde redovsining
-- README.txt
 
 ---
 
 ## Lärdomar och färdigheter
-- Client Actions
-- Filtrering
-- Supabase
-- Responsivitet
-- Tillänglighetsanpassning
-- Databashantering
-- Client components
-- Server components
-- Server Actions
+- Client & Server Components
+- Client & Server Actions
+- Filtrering och databaslogik
+- Supabase-integration
+- Responsiv design
+- Tillgänglighetsanpassning
 
+---
 
-### Svårigheter
-- Tidsbegränsning, vilket medförde att administrationsdel med inlogg inte hanns med.
-- Att alltid lyckas arbeta enligt de nyaste principerna, då dokumentation ibland är bristfällig.
-- Då koppling med Prisam inte lyckades, valde jag bort Prisma och valde att använda enbart Supabase.
+## Svårigheter
+- Tidsbegränsning förhindrade utveckling av administrationsdel med inlogg.
+- Dokumentation för nyare Next.js-principer var stundtals bristfällig.
+- Övergick från Prisma till enbart Supabase för att förenkla databaskopplingen.
 
 ---
 
 ## Tillgänglighet
-- Wave
-- Lighthouse
-- Manuell testning av utomstående
-- Screen reader
+Testat med:
+- WAVE och Lighthouse
+- Manuella granskningar av externa användare
+- Skärmläsare
 
 ---
 
 ## Framtida möjligheter
-En önskad fortsttning på detta projekt skulle vara att lägga till en administrationsdel, så att de anmälningar som kommer in lätt kan hanteras via ett inlogg.
+En framtida utveckling kan inkludera:
+- Administrationsgränssnitt med inlogg
+- Hantering av anmälningar direkt i systemet
