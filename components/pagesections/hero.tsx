@@ -9,7 +9,7 @@ export default function Hero() {
     >
       <div className="text-center px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Dansa mer</h1>
-        <p className="text-xl md:text-2xl mb-8">NYA KURSER!!</p>
+        <h2 className="text-xl md:text-2xl mb-8">NYA KURSER!!</h2>
         <div className="flex flex-col md:flex-row justify-center gap-4">
           <Link
             href="/larare"
