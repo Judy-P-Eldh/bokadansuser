@@ -30,7 +30,7 @@ Syftet är att skapa en tillgänglig och responsiv webbapp där besökare kan:
 ---
 
 ## Funktionalitet
-- Hero-ekstion med tydlig CTA 
+- Hero-sektion med tydlig CTA 
 - Presentation av verksamheten
 - Schemalista
 - Kurspresentation med filtrering
@@ -58,7 +58,7 @@ Projektet är byggt med:
 Webbappen innehåller flera sidor:
 - Start: hero med CTA, presentation av verksamheten, schema, kursanmälan, kontaktinfo, kontaktformulär, karta och vanliga frågor
 - Dansstilar: beskrivning av olika dansstilar
-- Lärarea: presentation av lärare
+- Lärare: presentation av lärare
 - Sök kurser – filtreringsfunktion för att hitta passande kurser
 
 ---
@@ -80,24 +80,24 @@ Utvecklingen bedrevs enskilt med **SCRUM-inspirerat arbetssätt**:
 - Skapade grundlayout
 - Lade in ny och befintlig exempeldata i databasen
 
-### Srint 2 - Filterfunktionalitet 
+### Sprint 2 - Filterfunktionalitet 
 - Koppling mot Supabase 
 - Implementerade filterfunktion 
 - Skapade informationssida om dansstilar
 - Implementerade funktionalitet för kontaktformulär
-- Kontrollera tillgänglighetsanpassning
+- Kontrollerade tillgänglighetsanpassning
 
 ### Sprint 3 - Färdigställa MVP
 - Justerade mappstruktur
 - Uppdaterade tillgänglighetsanpassning
 - Publicerade på Vercel
 - Testade med externa användare
-- Färdigställde aktuell info design av kurskort
+- Färdigställde kurskort (aktuell info och design)
 
-### Spring 4 - Avslt och redovisning (extra kort)
+### Sprint 4 - Avslut och redovisning
 - Uppdatering av responsivitet
 - Genomförde tillgänglighetsgranskning  
-- Förberedde och genomförde redovsining
+- Förberedde och genomförde redovisning
 
 ---
 
