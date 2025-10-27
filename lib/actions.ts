@@ -8,7 +8,7 @@ export async function handleRegisterSubmit(formData: FormData) {
   const studentName = formData.get("studentName") as string;
   const studentBirthYear = formData.get("studentBirthYear") as string;
   const parentName = formData.get("parentName") as string | null;
-  const parentPhone = formData.get("parentPhone") as string;
+  const phone = formData.get("phone") as string;
   const email = formData.get("email") as string;
   const subject = formData.get("subject") as string;
 
@@ -30,7 +30,7 @@ export async function handleRegisterSubmit(formData: FormData) {
   }
   // Validera telefonnummer
   const phoneRegex = /^\d{10}$/;
-  if (!parentPhone || !phoneRegex.test(parentPhone)) {
+  if (!phone || !phoneRegex.test(phone)) {
     errors.push("Ogiltigt telefonnummer");
   }
   // Validera födelseår om det finns
@@ -63,8 +63,8 @@ export async function handleRegisterSubmit(formData: FormData) {
     studentName: studentName,
     studentBirthYear: studentBirthYear,
     email: email,
+    phone: phone,
     ...(parentName && { parentName: parentName }), // Inkludera bara om det finns
-    ...(parentPhone && { parentPhone: parentPhone }), // Inkludera bara om det finns
   };
 
   const res = await fetch("https://api.web3forms.com/submit", {
@@ -87,7 +87,6 @@ export async function handleRegisterSubmit(formData: FormData) {
     success: false,
     message: json.message || "Något gick fel vid skickande av formulär",
   };
-
 }
 
 export async function sendContactForm(formData: FormData) {
