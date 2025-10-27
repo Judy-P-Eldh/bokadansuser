@@ -71,11 +71,6 @@ export default function RegisterForm({ courseNames }: FormParams) {
   };
 
   const clientAction = async (formData: FormData) => {
-    // Ta bort parentName om eleven är över 18
-    if (!isUnder18) {
-      formData.delete("parentName");
-    }
-
     // Ersätt kurs-id med kursnamnet
     if (selectedCourse) {
       formData.set("courseName", selectedCourse.name);
@@ -176,39 +171,40 @@ export default function RegisterForm({ courseNames }: FormParams) {
 
       {/* Visa förälders namn endast om eleven är under 18 */}
       {isUnder18 && (
-        <div>
-          <div className="mb-4">
-            <label htmlFor="parentName" className="block mb-2 font-medium">
-              Förälders för- och efternamn <span className="text-red-600">*</span>
-            </label>
-            <input
-              type="text"
-              id="parentName"
-              name="parentName"
-              required
-              minLength={2}
-              placeholder="Förälders för- och efternamn"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="parentPhone" className="block mb-2 font-medium">
-              Förälders telefonnummer <span className="text-red-600">*</span>
-            </label>
-            <input
-              type="text"
-              id="parentPhone"
-              name="parentPhone"
-              required
-              pattern="[0-9]{10}"
-              minLength={8}
-              maxLength={12}
-              placeholder="0701234567"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-          </div>
+        <div className="mb-4">
+          <label htmlFor="parentName" className="block mb-2 font-medium">
+            Förälders för- och efternamn <span className="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            id="parentName"
+            name="parentName"
+            required
+            minLength={2}
+            placeholder="Förälders för- och efternamn"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+          />
         </div>
       )}
+      
+      {/* Telefonnummer - alltid synligt men med olika etikett */}
+      <div className="mb-4">
+        <label htmlFor="phone" className="block mb-2 font-medium">
+          {isUnder18 ? "Förälders telefonnummer" : "Telefonnummer"}{" "}
+          <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          required
+          pattern="[0-9]{10}"
+          minLength={8}
+          maxLength={12}
+          placeholder="0701234567"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+        />
+      </div>
 
       {/* E-post */}
       <div className="mb-4">
