@@ -169,11 +169,11 @@ export default function RegisterForm({ courseNames }: FormParams) {
           )}
       </div>
 
-      {/* Visa förälders namn endast om eleven är under 18 */}
+      {/* Visa vårdnadshavares namn endast om eleven är under 18 */}
       {isUnder18 && (
         <div className="mb-4">
           <label htmlFor="parentName" className="block mb-2 font-medium">
-            Förälders för- och efternamn <span className="text-red-600">*</span>
+            Vårdnadshavares för- och efternamn <span className="text-red-600">*</span>
           </label>
           <input
             type="text"
@@ -181,7 +181,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
             name="parentName"
             required
             minLength={2}
-            placeholder="Förälders för- och efternamn"
+            placeholder="Vårdndshavares för- och efternamn"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
           />
         </div>
@@ -190,7 +190,7 @@ export default function RegisterForm({ courseNames }: FormParams) {
       {/* Telefonnummer - alltid synligt men med olika etikett */}
       <div className="mb-4">
         <label htmlFor="phone" className="block mb-2 font-medium">
-          {isUnder18 ? "Förälders telefonnummer" : "Telefonnummer"}{" "}
+          {isUnder18 ? "Vårdnadshavares telefonnummer" : "Telefonnummer"}{" "}
           <span className="text-red-600">*</span>
         </label>
         <input
