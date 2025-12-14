@@ -1,8 +1,7 @@
 import Classes from "@/components/pagesections/classes";
 import Header from "@/components/pagesections/header";
-import { CourseFilters } from "@/lib/data/interfaces";
+import { CourseFilters, FilterOptions } from "@/lib/data/interfaces";
 import { getCoursesWithSchool } from "@/lib/db";
-import { FilterOptions } from '@/lib/data/interfaces';
 import Filter from "@/components/pagesections/filter";
 
 export default async function Kurser({
@@ -20,11 +19,15 @@ export default async function Kurser({
     types: params.types ? (Array.isArray(params.types) ? params.types : [params.types]) : undefined,
     school_ids: params.school_ids ? (Array.isArray(params.school_ids) ? params.school_ids : [params.school_ids]) : undefined,
   };
+  // Sort on string
+  // .sort((a: string,b: string) => a.localeCompare(b))
 
+  // Sort on object.label property
+  // .sort((a: FilterOption,b: FilterOption) => a.label.localeCompare(b.label))
   const { data: courses, count } = await getCoursesWithSchool(filters);
 
   const filterOptions: FilterOptions = {
-    styles: [...new Set(courses.map((c) => c.name))].map(style => ({
+    styles: [...new Set(courses.map((c) => c.name))].map((style) => ({
       label: style,
       value: style
     })),
@@ -34,7 +37,7 @@ export default async function Kurser({
         label: d.toLocaleDateString('sv-SE', { day: '2-digit', month: 'short' }),
         value: date
       };
-    }),
+    }).sort((a, b) => a.value.localeCompare(b.value)),
     days: [...new Set(courses.map((c) => c.day))].map(day => ({
       label: day,
       value: day

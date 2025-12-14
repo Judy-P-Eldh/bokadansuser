@@ -74,22 +74,6 @@ export default function Filter({ filterOptions }: FilterProps) {
       <section className="grid grid-cols-3 mx-auto gap-2 border-purple-600 rounded-lg text-sm">
         <fieldset>
           <legend className="font-semibold mb-1">Dag</legend>
-          {filterOptions.days.map((day) => (
-            <label
-              key={day.value}
-              className="flex items-center gap-2 mb-1 cursor-pointer hover:text-purple-700"
-            >
-              <input
-                type="checkbox"
-                value={day.value}
-                checked={selectedDays.includes(day.value)}
-                onChange={() =>
-                  toggleValue(day.value, selectedDays, setSelectedDays)
-                }
-              />
-              {day.label}
-            </label>
-          ))}
         </fieldset>
 
         <fieldset>
